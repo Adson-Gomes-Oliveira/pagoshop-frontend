@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "PagoShop",
+  "name": "PagoShop, Ecommerce que facilita.",
   "icons": [
     {
       "src": "favicon.ico",
