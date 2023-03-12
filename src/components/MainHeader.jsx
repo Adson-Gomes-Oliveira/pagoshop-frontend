@@ -1,5 +1,6 @@
 import React from 'react';
 import PagoShopLogo from '../assets/svg/pago-shop-logo-white.svg';
+import './styles/MainHeader.css';
 
 function MainHeader() {
   return (
@@ -8,19 +9,17 @@ function MainHeader() {
         <img src={PagoShopLogo} alt="pago-shop-logo" />
       </div>
       <form className="header-search-bar">
-        <label htmlFor="search-bar">
-          <input
-            type="text"
-            id="search-bar"
-            // onChange={}
-            // value={}
-          />
-        </label>
+        <input
+          type="text"
+          id="search-bar"
+          // onChange={}
+          // value={}
+        />
         <button
           type="button"
           // onClick={}
         >
-          <span>Pesquisar</span>
+          <span className="material-icons-outlined">search</span>
         </button>
       </form>
       <div className="login">
