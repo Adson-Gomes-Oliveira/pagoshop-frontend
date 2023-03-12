@@ -24,4 +24,5 @@
 
 .main-nav .highlight-categories ul li {
   margin: 1rem;
+  cursor: pointer;
 }
