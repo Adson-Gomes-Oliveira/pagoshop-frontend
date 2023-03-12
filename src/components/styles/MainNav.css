@@ -1,0 +1,27 @@
+.main-nav {
+  background-color: var(--green-theme-darken);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-nav .all-categories {
+  margin-left: 1rem;
+}
+
+.main-nav .all-categories select {
+  background-color: var(--green-theme-base);
+  color: white;
+  padding: 0.5rem;
+}
+
+.main-nav .highlight-categories ul {
+  display: flex;
+  color: white;
+  font-family: 'K2D';
+  font-size: 0.8rem;
+}
+
+.main-nav .highlight-categories ul li {
+  margin: 1rem;
+}

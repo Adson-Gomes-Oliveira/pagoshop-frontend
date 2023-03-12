@@ -36,6 +36,7 @@
   font-family: 'K2D';
   font-weight: 600;
   width: 11%;
+  cursor: pointer;
 }
 
 .main-header .login span:first-of-type {
@@ -57,4 +58,5 @@
 .main-header .shopping-cart button span {
   color: white;
   font-size: 2rem;
+  cursor: pointer;
 }

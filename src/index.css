@@ -3,7 +3,9 @@
   margin: 0;
   padding: 0;
   border-color: transparent;
+  list-style: none;
   --green-theme-base: #025814;
+  --green-theme-darken: #014911;
 }
 
 @font-face {
