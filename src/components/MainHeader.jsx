@@ -1,11 +1,13 @@
 import React from 'react';
 import MainNav from './MainNav';
+import MainAd from './MainAd';
 import PagoShopLogo from '../assets/svg/pago-shop-logo-white.svg';
 import './styles/MainHeader.css';
 
 function MainHeader() {
   return (
     <>
+      <MainAd />
       <section className="main-header">
         <div className="header-logo">
           <a href="/"><img src={PagoShopLogo} alt="pago-shop-logo" /></a>

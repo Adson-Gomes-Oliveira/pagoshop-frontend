@@ -1,0 +1,13 @@
+.main-ad {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-ad .ad-copy {
+  color: var(--green-theme-darken);
+  padding: 1rem 0 1rem 0;
+  font-family: 'K2D';
+  font-size: 1rem;
+}
