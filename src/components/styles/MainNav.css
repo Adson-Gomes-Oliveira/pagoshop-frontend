@@ -6,12 +6,14 @@
 }
 
 .main-nav .all-categories {
+  display: flex;
+  color: white;
+  align-items: center;
   margin-left: 1rem;
+  font-family: 'K2D';
 }
 
-.main-nav .all-categories select {
-  background-color: var(--green-theme-base);
-  color: white;
+.main-nav .all-categories select option {
   padding: 0.5rem;
 }
 

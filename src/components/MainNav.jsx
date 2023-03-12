@@ -5,17 +5,14 @@ function MainNav() {
   return (
     <section className="main-nav">
       <div className="all-categories">
-        <select id="categories">
-          <option value="all-categories">
-            Todas as Categorias
-          </option>
-        </select>
+        <span>Todas as Categorias</span>
+        <span className="material-icons-outlined">keyboard_double_arrow_down</span>
       </div>
       <div className="highlight-categories">
         <ul>
-          <li>ELETRODOMÉSTICO</li>
+          <li>ELETRODOMÉSTICOS</li>
           <li>INFORMÁTICA</li>
-          <li>SMARTPHONE</li>
+          <li>SMARTPHONES</li>
           <li>MÓVEIS</li>
           <li>CAMA/MESA/BANHO</li>
           <li>PEDIDOS</li>
