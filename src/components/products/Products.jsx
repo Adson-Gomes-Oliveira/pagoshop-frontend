@@ -1,6 +1,7 @@
 import React, { useEffect, useContext, useState } from 'react';
 import PagoShopContext from '../../context/PagoShopContext';
 import ProductCard from './ProductCard';
+import '../styles/Products.css';
 
 function Products() {
   const [products, setProducts] = useState([]);
