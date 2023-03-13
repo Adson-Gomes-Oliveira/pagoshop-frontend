@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { v4 as uuid } from 'uuid';
-import AllCategories from './AllCategories';
-import './styles/MainNav.css';
+import MenuCategories from './MenuCategories';
+import '../styles/MainNav.css';
 
 function MainNav() {
   const [fixedCategories] = useState([
@@ -13,7 +13,7 @@ function MainNav() {
   ]);
   const [displayCategories, setDisplayCategories] = useState('none');
 
-  const toggleAllCategories = () => {
+  const toggleMenuCategories = () => {
     const newCategoriesDisplayStatus = displayCategories === 'none' ? 'flex' : 'none';
     setDisplayCategories(newCategoriesDisplayStatus);
   };
@@ -24,7 +24,7 @@ function MainNav() {
         <button
           type="button"
           className="all-categories"
-          onClick={toggleAllCategories}
+          onClick={toggleMenuCategories}
         >
           <span>Todas as Categorias</span>
           <span className="material-icons-outlined">keyboard_double_arrow_down</span>
@@ -36,7 +36,7 @@ function MainNav() {
           </ul>
         </div>
       </section>
-      <AllCategories fixedCategories={fixedCategories} displayAllCategories={displayCategories} />
+      <MenuCategories fixedCategories={fixedCategories} displayMenuCategories={displayCategories} />
     </>
   );
 }

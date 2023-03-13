@@ -21,6 +21,10 @@
   width: 100%;
 }
 
+.main-header .header-search-bar input:focus {
+  outline: none;
+}
+
 .main-header .header-search-bar button {
   background-color: transparent;
   cursor: pointer;

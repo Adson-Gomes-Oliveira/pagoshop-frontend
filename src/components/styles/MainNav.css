@@ -28,7 +28,7 @@
   cursor: pointer;
 }
 
-.all-extra-categories {
+.menu-categories {
   background-color: white;
   flex-direction: column;
   flex-wrap: wrap;
@@ -41,6 +41,6 @@
   color: var(--green-theme-base);
 }
 
-.all-extra-categories span {
+.menu-categories span {
   margin: 0.5rem 0 0.3rem 0;
 }

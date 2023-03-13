@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles/MainAd.css';
+import '../styles/MainAd.css';
 
 function MainAd() {
   return (

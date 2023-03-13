@@ -1,10 +1,26 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import MainNav from './MainNav';
 import MainAd from './MainAd';
-import PagoShopLogo from '../assets/svg/pago-shop-logo-white.svg';
-import './styles/MainHeader.css';
+import PagoShopLogo from '../../assets/svg/pago-shop-logo-white.svg';
+import PagoShopContext from '../../context/PagoShopContext';
+import '../styles/MainHeader.css';
 
 function MainHeader() {
+  const [searchInput, setSearchInput] = useState('');
+  const { setQuery } = useContext(PagoShopContext);
+
+  const handleSearchInputChange = (event) => {
+    const { value } = event.target;
+    setSearchInput(value);
+  };
+
+  const handleSearchButton = () => setQuery(searchInput);
+
+  const handleEnter = (event) => {
+    const { key } = event;
+    if (key === 'Enter') setQuery(searchInput);
+  };
+
   return (
     <>
       <MainAd />
@@ -15,13 +31,14 @@ function MainHeader() {
         <form className="header-search-bar">
           <input
             type="text"
-            id="search-bar"
-            // onChange={}
-            // value={}
+            id="searchBar"
+            onChange={handleSearchInputChange}
+            onKeyUp={handleEnter}
+            value={searchInput}
           />
           <button
             type="button"
-            // onClick={}
+            onClick={handleSearchButton}
           >
             <span className="material-icons-outlined">search</span>
           </button>
