@@ -17,9 +17,9 @@ function MenuCategories({ displayMenuCategories, categories }) {
   return (
     <div className="menu-categories" style={{ display: displayMenuCategories }}>
       {categories.map((cat) => {
-        const { _id, name } = cat;
+        const { name } = cat;
         return (
-          <span id={_id} key={uuid()} onClick={handleClickCategory}>{`• ${name}`}</span>
+          <span id={name} key={uuid()} onClick={handleClickCategory}>{`• ${name}`}</span>
         );
       })}
     </div>

@@ -58,7 +58,7 @@ function MainNav() {
           <ul>
             {fixedCategories.map((fixCat) => (
               <li
-                id={fixCat._id}
+                id={fixCat.name}
                 key={uuid()}
                 onClick={handleClickCategory}
               >

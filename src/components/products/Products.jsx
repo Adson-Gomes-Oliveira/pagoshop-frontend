@@ -23,7 +23,7 @@ function Products() {
           return (<ProductCard info={product} />);
         }
 
-        if (product.category === filterCategory) {
+        if (product.category.name === filterCategory) {
           return (<ProductCard info={product} />);
         }
 
