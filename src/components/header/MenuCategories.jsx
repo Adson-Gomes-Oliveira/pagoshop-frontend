@@ -1,33 +1,25 @@
-import React, { useEffect, useState } from 'react';
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+import React, { useContext } from 'react';
 import { v4 as uuid } from 'uuid';
 import PropTypes from 'prop-types';
-import requester from '../../helpers/requester';
+import PagoShopContext from '../../context/PagoShopContext';
 import '../styles/MainNav.css';
 
-function MenuCategories({ fixedCategories, displayMenuCategories }) {
-  const [categories, setCategories] = useState([]);
+function MenuCategories({ displayMenuCategories, categories }) {
+  const { setFilterCategory } = useContext(PagoShopContext);
 
-  const requestCategories = async () => {
-    const categoriesResponse = await requester('categories', 'get');
-
-    const categoriesFiltered = categoriesResponse.filter((cat) => !fixedCategories.includes(
-      cat.name,
-    ));
-    const activeCategories = categoriesFiltered.filter((cat) => cat.status === 'active');
-
-    setCategories(activeCategories);
+  const handleClickCategory = (event) => {
+    const { id } = event.target;
+    setFilterCategory(id);
   };
-
-  useEffect(() => {
-    requestCategories();
-  }, []);
 
   return (
     <div className="menu-categories" style={{ display: displayMenuCategories }}>
       {categories.map((cat) => {
-        const { name } = cat;
+        const { _id, name } = cat;
         return (
-          <span key={uuid()}>{`• ${name}`}</span>
+          <span id={_id} key={uuid()} onClick={handleClickCategory}>{`• ${name}`}</span>
         );
       })}
     </div>
@@ -35,8 +27,9 @@ function MenuCategories({ fixedCategories, displayMenuCategories }) {
 }
 
 MenuCategories.propTypes = {
-  fixedCategories: PropTypes.object,
+  fixedCategories: PropTypes.array,
   displayMenuCategories: PropTypes.string,
+  categories: PropTypes.array,
 }.isRequired;
 
 export default MenuCategories;

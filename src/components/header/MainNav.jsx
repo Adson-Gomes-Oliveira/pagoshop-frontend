@@ -1,21 +1,46 @@
-import React, { useState } from 'react';
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+import React, { useState, useEffect, useContext } from 'react';
 import { v4 as uuid } from 'uuid';
 import MenuCategories from './MenuCategories';
+import requester from '../../helpers/requester';
+import PagoShopContext from '../../context/PagoShopContext';
 import '../styles/MainNav.css';
 
 function MainNav() {
-  const [fixedCategories] = useState([
-    'ELETRODOMÉSTICOS',
-    'INFORMÁTICA',
-    'SMARTPHONES',
-    'MÓVEIS',
-    'CAMA/MESA/BANHO',
-  ]);
+  const [categories, setCategories] = useState([]);
+  const [fixedCategories, setFixedCategories] = useState([]);
   const [displayCategories, setDisplayCategories] = useState('none');
+  const { setFilterCategory } = useContext(PagoShopContext);
+
+  const requestCategories = async () => {
+    const categoriesResponse = await requester('categories', 'get');
+    const firstCategories = categoriesResponse.slice(0, 5);
+
+    setFixedCategories(firstCategories);
+
+    const categoriesFiltered = categoriesResponse.filter((cat) => {
+      const categoryNames = firstCategories.map((firstCat) => firstCat.name);
+      if (!categoryNames.includes(cat.name)) return cat;
+      return null;
+    });
+
+    const activeCategories = categoriesFiltered.filter((cat) => cat.status === 'active');
+    setCategories(activeCategories);
+  };
+
+  useEffect(() => {
+    requestCategories();
+  }, []);
 
   const toggleMenuCategories = () => {
     const newCategoriesDisplayStatus = displayCategories === 'none' ? 'flex' : 'none';
     setDisplayCategories(newCategoriesDisplayStatus);
+  };
+
+  const handleClickCategory = (event) => {
+    const { id } = event.target;
+    setFilterCategory(id);
   };
 
   return (
@@ -31,12 +56,23 @@ function MainNav() {
         </button>
         <div className="highlight-categories">
           <ul>
-            {fixedCategories.map((fixCat) => <li key={uuid()}>{fixCat}</li>)}
+            {fixedCategories.map((fixCat) => (
+              <li
+                id={fixCat._id}
+                key={uuid()}
+                onClick={handleClickCategory}
+              >
+                {fixCat.name}
+              </li>
+            ))}
             <li>PEDIDOS</li>
           </ul>
         </div>
       </section>
-      <MenuCategories fixedCategories={fixedCategories} displayMenuCategories={displayCategories} />
+      <MenuCategories
+        displayMenuCategories={displayCategories}
+        categories={categories}
+      />
     </>
   );
 }

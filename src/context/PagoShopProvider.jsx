@@ -5,6 +5,7 @@ import requester from '../helpers/requester';
 
 function PagoShopProvider({ children }) {
   const [query, setQuery] = useState('');
+  const [filterCategory, setFilterCategory] = useState('');
 
   const requestProducts = async () => {
     const productsResponse = await requester('products', 'get');
@@ -15,7 +16,9 @@ function PagoShopProvider({ children }) {
     requestProducts,
     query,
     setQuery,
-  }), []);
+    filterCategory,
+    setFilterCategory,
+  }), [query, filterCategory]);
 
   return (
     <PagoShopContext.Provider value={value}>

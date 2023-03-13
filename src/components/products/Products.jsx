@@ -5,7 +5,7 @@ import '../styles/Products.css';
 
 function Products() {
   const [products, setProducts] = useState([]);
-  const { requestProducts } = useContext(PagoShopContext);
+  const { requestProducts, filterCategory } = useContext(PagoShopContext);
 
   useEffect(() => {
     const response = async () => {
@@ -18,7 +18,17 @@ function Products() {
 
   return (
     <section className="products-section">
-      {products.map((product) => <ProductCard info={product} />)}
+      {products.map((product) => {
+        if (filterCategory === '') {
+          return (<ProductCard info={product} />);
+        }
+
+        if (product.category === filterCategory) {
+          return (<ProductCard info={product} />);
+        }
+
+        return null;
+      })}
     </section>
   );
 }
