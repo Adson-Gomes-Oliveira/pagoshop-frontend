@@ -11,10 +11,9 @@
   align-items: center;
   margin-left: 1rem;
   font-family: 'K2D';
-}
-
-.main-nav .all-categories select option {
-  padding: 0.5rem;
+  font-size: 1rem;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 .main-nav .highlight-categories ul {
@@ -27,4 +26,21 @@
 .main-nav .highlight-categories ul li {
   margin: 1rem;
   cursor: pointer;
+}
+
+.all-extra-categories {
+  background-color: white;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 10rem;
+  border-bottom: 0.2rem solid rgba(0, 0, 0, 0.1);
+  font-family: 'K2D';
+  padding: 0 0.8rem 0 0.8rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--green-theme-base);
+}
+
+.all-extra-categories span {
+  margin: 0.5rem 0 0.3rem 0;
 }
