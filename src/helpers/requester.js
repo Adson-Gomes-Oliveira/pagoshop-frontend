@@ -7,6 +7,7 @@ const categories = {
 
 const products = {
   get: product.getAllProducts,
+  getOne: product.getOneProduct,
 };
 
 const endpoints = {

@@ -2,6 +2,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useState, useEffect, useContext } from 'react';
 import { v4 as uuid } from 'uuid';
+import { useLocation, useNavigate } from 'react-router-dom';
 import MenuCategories from './MenuCategories';
 import requester from '../../helpers/requester';
 import PagoShopContext from '../../context/PagoShopContext';
@@ -12,6 +13,8 @@ function MainNav() {
   const [fixedCategories, setFixedCategories] = useState([]);
   const [displayCategories, setDisplayCategories] = useState('none');
   const { setFilterCategory } = useContext(PagoShopContext);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const requestCategories = async () => {
     const categoriesResponse = await requester('categories', 'get');
@@ -41,6 +44,9 @@ function MainNav() {
   const handleClickCategory = (event) => {
     const { id } = event.target;
     setFilterCategory(id);
+    if (location.pathname !== '/') {
+      navigate('/');
+    }
   };
 
   return (
