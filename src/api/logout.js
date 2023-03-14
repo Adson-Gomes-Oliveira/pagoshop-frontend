@@ -5,8 +5,6 @@ const logout = async (token) => {
   const requestStringTwo = `:${process.env.REACT_APP_LOGOUT_PORT}/${process.env.REACT_APP_LOGOUT_BASEURL}`;
   const requestString = requestStringOne + requestStringTwo;
 
-  console.log(requestString);
-
   try {
     const response = await axios.get(requestString, {
       headers: { Authorization: token },
