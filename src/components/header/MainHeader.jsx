@@ -1,4 +1,7 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import MainNav from './MainNav';
 import MainAd from './MainAd';
 import PagoShopLogo from '../../assets/svg/pago-shop-logo-white.svg';
@@ -8,6 +11,7 @@ import '../styles/MainHeader.css';
 function MainHeader() {
   const [searchInput, setSearchInput] = useState('');
   const { setQuery } = useContext(PagoShopContext);
+  const navigate = useNavigate();
 
   const handleSearchInputChange = (event) => {
     const { value } = event.target;
@@ -20,6 +24,8 @@ function MainHeader() {
     const { key } = event;
     if (key === 'Enter') setQuery(searchInput);
   };
+
+  const handleRedirect = () => navigate('/login');
 
   return (
     <>
@@ -43,7 +49,7 @@ function MainHeader() {
             <span className="material-icons-outlined">search</span>
           </button>
         </form>
-        <div className="login">
+        <div className="login" onClick={handleRedirect}>
           <span>Entre ou Cadastre-se</span>
           <span className="material-icons-outlined">account_circle</span>
         </div>

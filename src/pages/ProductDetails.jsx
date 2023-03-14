@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import requester from '../../helpers/requester';
-import MainHeader from '../header/MainHeader';
-import formatNumberToPrice from '../../helpers/formatNumber';
-import '../styles/ProductDetails.css';
+import requester from '../helpers/requester';
+import MainHeader from '../components/header/MainHeader';
+import formatNumberToPrice from '../helpers/formatNumber';
+import './styles/ProductDetails.css';
 
 function ProductDetails() {
   const { id } = useParams();

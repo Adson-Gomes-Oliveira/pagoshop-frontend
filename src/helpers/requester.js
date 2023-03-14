@@ -1,5 +1,6 @@
 import category from '../api/categories';
 import product from '../api/products';
+import login from '../api/login';
 
 const categories = {
   get: category.getAllCategories,
@@ -10,9 +11,14 @@ const products = {
   getOne: product.getOneProduct,
 };
 
+const authorization = {
+  login,
+};
+
 const endpoints = {
   categories,
   products,
+  authorization,
 };
 
 const requester = async (endpoint, method, requestParams = {}) => {

@@ -1,0 +1,88 @@
+.login-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.modal-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0 2rem 0;
+  width: 30%;
+  box-shadow: 24px 17px 34px -7px rgba(145,145,145,1);
+}
+
+.modal-login img {
+  align-self: flex-start;
+  margin-left: 1rem
+}
+
+.modal-login span:first-of-type {
+  margin: 2.5rem 0 3rem 0;
+  width: 70%;
+  text-align: center;
+  font-family: 'K2D';
+}
+
+.modal-login form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.modal-login form label {
+  margin-bottom: 1rem;
+  width: 70%;
+}
+
+.modal-login form label span {
+  font-family: 'K2D';
+  font-weight: 700;
+}
+
+.modal-login form label input {
+  height: 2.5rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  padding-left: 0.5rem;
+  margin-top: 0.5rem;
+  border: 0.1rem solid rgb(167, 167, 167);
+}
+
+.modal-login form label input::placeholder {
+  color: rgb(192, 191, 191);
+}
+
+.modal-login .login-error-message {
+  color:red
+}
+
+.modal-login .login-buttons {
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 1rem;
+}
+
+.modal-login .login-buttons button {
+  cursor: pointer;
+  padding: 1rem 0 1rem 0;
+  width: 40%;
+  font-family: 'K2D';
+  font-weight: 700;
+}
+
+.modal-login .login-buttons button:first-of-type {
+  background-color: white;
+  border: 0.15rem solid var(--green-theme-base);
+  color: var(--green-theme-base);
+}
+
+.modal-login .login-buttons button:last-of-type {
+  background-color: var(--green-theme-base);
+  color: white;
+}
