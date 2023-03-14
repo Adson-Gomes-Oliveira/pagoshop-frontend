@@ -1,17 +1,29 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import MainNav from './MainNav';
 import MainAd from './MainAd';
 import PagoShopLogo from '../../assets/svg/pago-shop-logo-white.svg';
 import PagoShopContext from '../../context/PagoShopContext';
+import requester from '../../helpers/requester';
 import '../styles/MainHeader.css';
 
 function MainHeader() {
   const [searchInput, setSearchInput] = useState('');
+  const [username, setUsername] = useState(null);
   const { setQuery } = useContext(PagoShopContext);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const recoverUserData = localStorage.getItem('user');
+    if (recoverUserData) {
+      const parseUserData = JSON.parse(recoverUserData);
+      return setUsername(parseUserData.name);
+    }
+
+    return setUsername(null);
+  });
 
   const handleSearchInputChange = (event) => {
     const { value } = event.target;
@@ -26,6 +38,16 @@ function MainHeader() {
   };
 
   const handleRedirect = () => navigate('/login');
+
+  const handleClickLogout = async () => {
+    const recoverToken = localStorage.getItem('token');
+    const response = await requester('authorization', 'logout', recoverToken);
+
+    if (response === 204) {
+      localStorage.clear();
+      navigate('/');
+    }
+  };
 
   return (
     <>
@@ -49,10 +71,25 @@ function MainHeader() {
             <span className="material-icons-outlined">search</span>
           </button>
         </form>
-        <div className="login" onClick={handleRedirect}>
-          <span>Entre ou Cadastre-se</span>
-          <span className="material-icons-outlined">account_circle</span>
-        </div>
+
+        {username === null ? (
+          <div className="login" onClick={handleRedirect}>
+            <span>Entre ou Cadastre-se</span>
+            <span className="material-icons-outlined">account_circle</span>
+          </div>
+        ) : (
+          <div className="logout">
+            <span>{username}</span>
+            <button
+              type="button"
+              onClick={handleClickLogout}
+            >
+              <span>Sair</span>
+              <span className="material-icons-outlined">logout</span>
+            </button>
+          </div>
+        )}
+
         <div className="shopping-cart">
           <button
             type="button"

@@ -26,7 +26,7 @@ function Login() {
       password: loginInput.password,
     });
 
-    if (response === 'ERR_BAD_REQUEST') {
+    if (response === 400) {
       setShowLoginError('block');
       return;
     }

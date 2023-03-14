@@ -34,6 +34,29 @@
   font-weight: 700;
 }
 
+.main-header .logout {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-family: 'K2D';
+  font-weight: 600;
+  max-width: 15%;
+}
+
+.main-header .logout button {
+  font-family: 'K2D';
+  background-color: transparent;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-top: 0.2rem;
+  color: white;
+  cursor: pointer;
+}
+
 .main-header .login {
   display: flex;
   color: white;

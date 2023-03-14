@@ -1,6 +1,7 @@
 import category from '../api/categories';
 import product from '../api/products';
 import login from '../api/login';
+import logout from '../api/logout';
 
 const categories = {
   get: category.getAllCategories,
@@ -13,6 +14,7 @@ const products = {
 
 const authorization = {
   login,
+  logout,
 };
 
 const endpoints = {

@@ -9,7 +9,7 @@ const login = async (credentials) => {
     const response = await axios.post(requestString, credentials);
     return response;
   } catch (err) {
-    return err.code;
+    return err.status;
   }
 };
 
