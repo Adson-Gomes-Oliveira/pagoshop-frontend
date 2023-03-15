@@ -4,11 +4,14 @@ import requester from '../helpers/requester';
 import MainHeader from '../components/header/MainHeader';
 import formatNumberToPrice from '../helpers/formatNumber';
 import PagoShopContext from '../context/PagoShopContext';
+import ConfirmBuyModal from '../components/products/ConfirmBuyModal';
 import './styles/ProductDetails.css';
 
 function ProductDetails() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
+  const [productBuyQuantity, setProductQuantity] = useState(0);
+  const [showConfirmModal, setShowConfirmModal] = useState(false);
   const navigate = useNavigate();
   const { cart, setCart } = useContext(PagoShopContext);
 
@@ -21,13 +24,18 @@ function ProductDetails() {
     requestProduct();
   }, []);
 
+  const handleChangeQuantity = (event) => {
+    const { value } = event.target;
+    setProductQuantity(value);
+  };
+
   const cartWithItems = (cartCopy) => {
     const productExistsInCartIndex = cartCopy
       .findIndex((productInCart) => productInCart.product === product.product);
 
     if (productExistsInCartIndex > -1) {
       const newCart = [...cartCopy];
-      newCart[productExistsInCartIndex].quantity += 1;
+      newCart[productExistsInCartIndex].quantity += Number(productBuyQuantity);
       setCart(newCart);
       return;
     }
@@ -39,7 +47,7 @@ function ProductDetails() {
         product: product.product,
         unitPrice: product.unit_price,
         thumbnail: product.thumbnail,
-        quantity: 1,
+        quantity: Number(productBuyQuantity),
       },
     ];
 
@@ -52,7 +60,7 @@ function ProductDetails() {
         product: product.product,
         unitPrice: product.unit_price,
         thumbnail: product.thumbnail,
-        quantity: 1,
+        quantity: Number(productBuyQuantity),
       },
     ];
 
@@ -62,7 +70,9 @@ function ProductDetails() {
   const handleClickBuy = () => {
     if (!localStorage.getItem('user')) return navigate('/login');
 
+    setShowConfirmModal(true);
     if (cart.length > 0) return cartWithItems(cart);
+
     return cartWithNoItems();
   };
 
@@ -70,6 +80,7 @@ function ProductDetails() {
     <>
       <MainHeader />
       <section className="product-details-section">
+        {showConfirmModal && <ConfirmBuyModal toggleOff={setShowConfirmModal} />}
         {product !== null ? (
           <>
             <div className="product-image">
@@ -82,6 +93,15 @@ function ProductDetails() {
               <span>Pode dividir em até 12X sem juros !</span>
               <span>Aceitamos todos os cartões.</span>
               <span>Frete grátis todo Brasil *</span>
+              <div className="select-quantity">
+                <span>Quantidade: </span>
+                <input
+                  type="number"
+                  onChange={handleChangeQuantity}
+                  value={productBuyQuantity}
+                />
+              </div>
+              <span>{`Quantidade em Estoque: ${product.quantity}`}</span>
               <button
                 type="button"
                 onClick={handleClickBuy}

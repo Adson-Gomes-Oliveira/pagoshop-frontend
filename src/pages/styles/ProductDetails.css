@@ -27,7 +27,7 @@
   margin-right: 5%;
 }
 
-.product-details-section .product-buy span:first-of-type {
+.product-details-section .product-buy span:nth-child(1) {
   font-size: 1.5rem;
   color: var(--green-theme-base);
   font-family: 'K2D';
@@ -40,6 +40,21 @@
 
 .product-details-section .product-buy span:last-of-type {
   font-size: 0.75rem;
+}
+
+.product-details-section .select-quantity {
+  margin: 1rem 0 1rem 0;
+}
+
+.product-details-section .select-quantity span:nth-child(1) {
+  font-size: 1rem;
+}
+
+.product-details-section .select-quantity input {
+  border: 0.1rem solid rgb(116, 116, 116);
+  width: 10%;
+  padding: 0.2rem;
+  text-align: center;
 }
 
 .product-details-section .product-buy button {
