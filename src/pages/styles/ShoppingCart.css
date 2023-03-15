@@ -1,0 +1,40 @@
+.shopping-cart-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.shopping-cart-section .back-home {
+  margin: 1rem 0 1rem 1rem;
+  color: var(--green-theme-base);
+  cursor: pointer;
+}
+
+.shopping-cart-section h1 {
+  background-color: var(--green-theme-darken);
+  font-family: 'K2D';
+  width: 100%;
+  align-self: center;
+  color: white;
+  padding: 1rem 0 1rem 0;
+  text-align: center;
+}
+
+.shopping-cart-section .cart-list {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0 4rem 2rem;
+}
+
+.shopping-cart-section .final-price {
+  margin-left: 2rem
+}
+
+.shopping-cart-section button {
+  width: 30%;
+  padding: 1rem 0 1rem;
+  background-color: var(--green-theme-base);
+  color: white;
+  font-weight: 700;
+  align-self: flex-end;
+  margin-right: 1rem;
+}

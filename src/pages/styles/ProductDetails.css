@@ -49,6 +49,11 @@
   font-family: 'K2D';
   font-weight: 700;
   padding: 1rem 0 1rem 0;
+  cursor: pointer;
+}
+
+.product-details-section .product-buy button:hover {
+  background-color: rgb(255, 94, 0);
 }
 
 .product-details-description {

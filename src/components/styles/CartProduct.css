@@ -1,0 +1,32 @@
+.cart-product {
+  border: 0.1rem solid rgb(167, 167, 167);
+  display: flex;
+  width: 70%;
+  height: 7rem;
+  margin-top: 1rem;
+}
+
+.cart-product .product-general-info {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1rem 1rem 0;
+}
+
+.cart-product img {
+  width: 6%;
+  margin-right: 2rem;
+}
+
+.cart-product .product-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-product .button-delete {
+  background-color: rgb(187, 2, 2);
+  position: relative;
+  height: 100%;
+  color: white;
+  width: 5%;
+  cursor: pointer;
+}

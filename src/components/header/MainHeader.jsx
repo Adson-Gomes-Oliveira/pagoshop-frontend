@@ -49,6 +49,8 @@ function MainHeader() {
     }
   };
 
+  const handleClickCart = async () => navigate('/shopping-cart');
+
   return (
     <>
       <MainAd />
@@ -93,7 +95,7 @@ function MainHeader() {
         <div className="shopping-cart">
           <button
             type="button"
-            // onClick={}
+            onClick={handleClickCart}
           >
             <span className="material-icons-outlined">shopping_cart</span>
           </button>
