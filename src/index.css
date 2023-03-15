@@ -6,6 +6,9 @@
   list-style: none;
   --green-theme-base: #025814;
   --green-theme-darken: #014911;
+  --purple-theme-base: #330C2F;
+  --blue-theme-base: #7067CF;
+  --amaranth-theme-base: #b70b28;
 }
 
 @font-face {

@@ -1,14 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import requester from '../helpers/requester';
 import MainHeader from '../components/header/MainHeader';
 import formatNumberToPrice from '../helpers/formatNumber';
+import PagoShopContext from '../context/PagoShopContext';
 import './styles/ProductDetails.css';
 
 function ProductDetails() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const navigate = useNavigate();
+  const { cart, setCart } = useContext(PagoShopContext);
 
   const requestProduct = async () => {
     const response = await requester('products', 'getOne', id);
@@ -19,31 +21,19 @@ function ProductDetails() {
     requestProduct();
   }, []);
 
-  const handleClickBuy = () => {
-    if (!localStorage.getItem('user')) return navigate('/login');
-    if (localStorage.getItem('shopping-cart')) {
-      const recoverCart = JSON.parse(localStorage.getItem('shopping-cart'));
+  const cartWithItems = (cartCopy) => {
+    const productExistsInCartIndex = cartCopy
+      .findIndex((productInCart) => productInCart.product === product.product);
 
-      const productExistsInCartIndex = recoverCart
-        .findIndex((productInCart) => productInCart.product === product.product);
-      if (productExistsInCartIndex > -1) {
-        recoverCart[productExistsInCartIndex].quantity += 1;
-        return localStorage.setItem('shopping-cart', JSON.stringify(recoverCart));
-      }
-
-      return localStorage.setItem('shopping-cart', JSON.stringify([
-        ...recoverCart,
-        {
-          id: product._id,
-          product: product.product,
-          unitPrice: product.unit_price,
-          thumbnail: product.thumbnail,
-          quantity: 1,
-        },
-      ]));
+    if (productExistsInCartIndex > -1) {
+      const newCart = [...cartCopy];
+      newCart[productExistsInCartIndex].quantity += 1;
+      setCart(newCart);
+      return;
     }
 
-    return localStorage.setItem('shopping-cart', JSON.stringify([
+    const cartUpdated = [
+      ...cartCopy,
       {
         id: product._id,
         product: product.product,
@@ -51,7 +41,29 @@ function ProductDetails() {
         thumbnail: product.thumbnail,
         quantity: 1,
       },
-    ]));
+    ];
+
+    setCart(cartUpdated);
+  };
+  const cartWithNoItems = () => {
+    const newCart = [
+      {
+        id: product._id,
+        product: product.product,
+        unitPrice: product.unit_price,
+        thumbnail: product.thumbnail,
+        quantity: 1,
+      },
+    ];
+
+    return setCart(newCart);
+  };
+
+  const handleClickBuy = () => {
+    if (!localStorage.getItem('user')) return navigate('/login');
+
+    if (cart.length > 0) return cartWithItems(cart);
+    return cartWithNoItems();
   };
 
   return (

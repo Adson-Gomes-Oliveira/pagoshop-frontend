@@ -12,7 +12,7 @@ import '../styles/MainHeader.css';
 function MainHeader() {
   const [searchInput, setSearchInput] = useState('');
   const [username, setUsername] = useState(null);
-  const { setQuery } = useContext(PagoShopContext);
+  const { setQuery, cart } = useContext(PagoShopContext);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -98,6 +98,7 @@ function MainHeader() {
             onClick={handleClickCart}
           >
             <span className="material-icons-outlined">shopping_cart</span>
+            <div className="cart-counter">{cart.length}</div>
           </button>
         </div>
       </section>

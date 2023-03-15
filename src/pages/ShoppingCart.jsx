@@ -1,25 +1,16 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import CartProduct from '../components/products/CartProduct';
+import PagoShopContext from '../context/PagoShopContext';
 import formatNumberToPrice from '../helpers/formatNumber';
 import './styles/ShoppingCart.css';
 
 function ShoppingCart() {
-  const [cart, setCart] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const recoverCart = localStorage.getItem('shopping-cart');
-    if (recoverCart) {
-      const cartParsed = JSON.parse(recoverCart);
-      return setCart(cartParsed);
-    }
-
-    return undefined;
-  }, []);
+  const { cart } = useContext(PagoShopContext);
 
   useEffect(() => {
     const prices = cart.map((product) => {

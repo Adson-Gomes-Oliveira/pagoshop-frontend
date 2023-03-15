@@ -2,15 +2,19 @@
   align-items: center;
   background-color: var(--green-theme-base);
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   padding: 1rem 2rem 0 2rem;
+}
+
+.main-header .header-logo {
+  margin-right: 1rem;
 }
 
 .main-header .header-search-bar {
   background-color: white;
   border-radius: 0.5rem;
   display: flex;
-  width: 50%;
+  width: 40%;
 }
 
 .main-header .header-search-bar input {
@@ -41,6 +45,7 @@
   font-family: 'K2D';
   font-weight: 600;
   max-width: 15%;
+  margin: 0 2rem 0 2rem;
 }
 
 .main-header .logout button {
@@ -86,4 +91,19 @@
   color: white;
   font-size: 2rem;
   cursor: pointer;
+}
+
+.main-header .shopping-cart button .cart-counter {
+  background-color: white;
+  color: var(--amaranth-theme-base);
+  border-radius: 50%;
+  height: 1.2rem;
+  width: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  position: relative;
+  top: -1rem;
+  left: 1rem;
 }

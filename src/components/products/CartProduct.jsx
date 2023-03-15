@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 import { v4 as uuid } from 'uuid';
 import formatNumberToPrice from '../../helpers/formatNumber';
+import PagoShopContext from '../../context/PagoShopContext';
 import '../styles/CartProduct.css';
 
 function CartProduct({ info }) {
@@ -13,11 +14,11 @@ function CartProduct({ info }) {
     unitPrice,
   } = info;
   const navigate = useNavigate();
+  const { cart, setCart } = useContext(PagoShopContext);
 
   const handleClickDelete = (id) => {
-    const recoverCart = JSON.parse(localStorage.getItem('shopping-cart'));
-    const cartWithoutTheProduct = recoverCart.filter((prod) => prod.id !== id);
-    localStorage.setItem('shopping-cart', JSON.stringify(cartWithoutTheProduct));
+    const cartWithoutTheProduct = cart.filter((prod) => prod.id !== id);
+    setCart(cartWithoutTheProduct);
     navigate(0);
   };
 
