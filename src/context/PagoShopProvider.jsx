@@ -6,6 +6,7 @@ import requester from '../helpers/requester';
 function PagoShopProvider({ children }) {
   const [query, setQuery] = useState('');
   const [filterCategory, setFilterCategory] = useState('');
+  const [orderId, setOrderId] = useState('');
   const [cart, setCart] = useState([]);
 
   const requestProducts = async () => {
@@ -32,7 +33,9 @@ function PagoShopProvider({ children }) {
     setFilterCategory,
     cart,
     setCart,
-  }), [cart, query, filterCategory]);
+    orderId,
+    setOrderId,
+  }), [cart, query, filterCategory, orderId]);
 
   return (
     <PagoShopContext.Provider value={value}>

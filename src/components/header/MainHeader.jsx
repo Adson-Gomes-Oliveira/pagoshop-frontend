@@ -43,9 +43,14 @@ function MainHeader() {
     const recoverToken = localStorage.getItem('token');
     const response = await requester('authorization', 'logout', recoverToken);
 
-    if (response === 204) {
+    if (response.data === 'jwt expired') {
       localStorage.clear();
-      navigate('/');
+      navigate(0);
+    }
+
+    if (response.status === 204) {
+      localStorage.clear();
+      navigate(0);
     }
   };
 

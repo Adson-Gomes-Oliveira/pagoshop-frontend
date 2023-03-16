@@ -69,6 +69,7 @@
   font-weight: 600;
   width: 11%;
   cursor: pointer;
+  margin: 0 2rem 0 2rem;
 }
 
 .main-header .login span:first-of-type {

@@ -9,9 +9,9 @@ const logout = async (token) => {
     const response = await axios.get(requestString, {
       headers: { Authorization: token },
     });
-    return response.status;
+    return response;
   } catch (err) {
-    return err.status;
+    return err.response;
   }
 };
 
