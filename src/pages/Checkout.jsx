@@ -7,11 +7,20 @@ import PagoShopContext from '../context/PagoShopContext';
 import requester from '../helpers/requester';
 import formatNumberToPrice from '../helpers/formatNumber';
 import './styles/Checkout.css';
+import Invoice from '../components/orders/Invoice';
 
 function Checkout() {
   const [order, setOrder] = useState();
   const [clientName, setClientName] = useState('');
   const [totalPrice, setTotalPrice] = useState(0);
+  const [invoice, setInvoice] = useState();
+  const [showInvoice, setShowInvoice] = useState(false);
+  const [cardInput, setCardInput] = useState({
+    cardNumber: '',
+    cvv: '',
+    expirationDate: '',
+    buyerName: '',
+  });
   const navigate = useNavigate();
   const { orderId } = useContext(PagoShopContext);
 
@@ -37,12 +46,35 @@ function Checkout() {
     setTotalPrice(newTotalPrice);
   };
 
+  const handleChangeCard = (event) => {
+    const { id, value } = event.target;
+    setCardInput({
+      ...cardInput,
+      [id]: value,
+    });
+  };
+
+  const handleClickFinishOrder = async () => {
+    const recoverToken = localStorage.getItem('token');
+    const payment = { ...cardInput, value: totalPrice };
+
+    const response = await requester('orders', 'postConfirmOrder', {
+      paymentInfos: payment,
+      id: orderId,
+      token: recoverToken,
+    });
+
+    setInvoice(response);
+    setShowInvoice(true);
+  };
+
   useEffect(() => {
     recoverOrder();
   }, []);
 
   return (
     <section className="checkout-section">
+      {showInvoice && <Invoice info={invoice} />}
       <span className="back-home" onClick={() => navigate('/')}>{'<< Voltar para a Página Inicial'}</span>
       <h1>Finalizar Pedido</h1>
       <div className="order-info">
@@ -102,6 +134,8 @@ function Checkout() {
             <input
               type="text"
               id="cardNumber"
+              onChange={handleChangeCard}
+              value={cardInput.cardNumber}
             />
           </label>
           <label htmlFor="cvv">
@@ -109,13 +143,17 @@ function Checkout() {
             <input
               type="text"
               id="cvv"
+              onChange={handleChangeCard}
+              value={cardInput.cvv}
             />
           </label>
-          <label htmlFor="expiration">
+          <label htmlFor="expirationDate">
             <span>Data de Vencimento:</span>
             <input
               type="text"
-              id="expiration"
+              id="expirationDate"
+              onChange={handleChangeCard}
+              value={cardInput.expirationDate}
             />
           </label>
           <label htmlFor="buyerName">
@@ -123,12 +161,15 @@ function Checkout() {
             <input
               type="text"
               id="buyerName"
+              onChange={handleChangeCard}
+              value={cardInput.buyerName}
             />
           </label>
         </form>
       </div>
       <button
         type="button"
+        onClick={handleClickFinishOrder}
       >
         FINALIZAR
       </button>

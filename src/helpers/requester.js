@@ -4,6 +4,7 @@ import login from '../api/login';
 import logout from '../api/logout';
 import order from '../api/orders';
 import account from '../api/accounts';
+import payment from '../api/payments';
 
 const categories = {
   get: category.getAllCategories,
@@ -18,6 +19,10 @@ const products = {
   getOne: product.getOneProduct,
 };
 
+const payments = {
+  getOne: payment.getOnePayment,
+};
+
 const authorization = {
   login,
   logout,
@@ -26,6 +31,7 @@ const authorization = {
 const orders = {
   getOne: order.getOneOrder,
   post: order.createOrder,
+  postConfirmOrder: order.confirmOrder,
 };
 
 const endpoints = {
@@ -34,6 +40,7 @@ const endpoints = {
   authorization,
   orders,
   accounts,
+  payments,
 };
 
 const requester = async (endpoint, method, requestParams = {}) => {
