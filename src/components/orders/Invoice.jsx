@@ -103,7 +103,7 @@ function Invoice({ info }) {
           </span>
         </div>
         <div className="order-products">
-          {info.description.ordersList.map((product) => {
+          {info.description.productsOrdered.map((product) => {
             const { quantity, product: name, price } = product;
             return (
               <li key={uuid()}>{`${quantity} X - ${name} [ ${price * quantity} ]`}</li>
