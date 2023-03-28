@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 const logout = async (token) => {
-  const requestStringOne = `http://${process.env.REACT_APP_LOGOUT_HOST || '127.0.0.1'}`;
-  const requestStringTwo = `:${process.env.REACT_APP_LOGOUT_PORT}/${process.env.REACT_APP_LOGOUT_BASEURL}`;
+  const requestStringOne = `http://${process.env.REACT_APP_GATEWAY_HOST || '127.0.0.1'}`;
+  const requestStringTwo = `:${process.env.REACT_APP_GATEWAY_PORT}/${process.env.REACT_APP_LOGOUT_BASEURL}`;
   const requestString = requestStringOne + requestStringTwo;
 
   try {
