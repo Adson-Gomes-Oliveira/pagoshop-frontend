@@ -1,0 +1,35 @@
+* {
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  border-color: transparent;
+  list-style: none;
+  --green-theme-base: #025814;
+  --green-theme-darken: #014911;
+  --purple-theme-base: #330C2F;
+  --blue-theme-base: #7067CF;
+  --amaranth-theme-base: #b70b28;
+}
+
+@font-face {
+  font-family: 'K2D';
+  src: url('./assets/fonts/K2D-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Sono';
+  src: url('./assets/fonts/Sono-Regular.ttf');
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
