@@ -1,0 +1,1 @@
+# pagoshop-frontend
