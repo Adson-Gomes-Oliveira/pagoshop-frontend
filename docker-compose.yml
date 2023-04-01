@@ -18,3 +18,5 @@ services:
       - REACT_APP_ORDER_BASEURL=api/orders
       - REACT_APP_PAYMENT_BASEURL=api/payments
       - JWT_SECRET=MTk4OGExOTZkMWYyOWZjZjlmOTcwMWVjZWRjMzc1MzZkOGM0MmFjMjQ0NjcyZjIzZDQwOGU4YTQ1YWQ3NTRjZA==
+    networks:
+      - trooper-network
