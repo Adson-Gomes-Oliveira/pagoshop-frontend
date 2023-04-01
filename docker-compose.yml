@@ -8,7 +8,7 @@ services:
     volumes:
       - ./:/app/frontend
     environment:
-      - REACT_APP_GATEWAY_HOST=ms-gateway
+      - REACT_APP_GATEWAY_HOST=127.0.0.1
       - REACT_APP_GATEWAY_PORT=5000
       - REACT_APP_ACCOUNT_BASEURL=api/accounts
       - REACT_APP_PRODUCT_BASEURL=api/products
@@ -18,5 +18,8 @@ services:
       - REACT_APP_ORDER_BASEURL=api/orders
       - REACT_APP_PAYMENT_BASEURL=api/payments
       - JWT_SECRET=MTk4OGExOTZkMWYyOWZjZjlmOTcwMWVjZWRjMzc1MzZkOGM0MmFjMjQ0NjcyZjIzZDQwOGU4YTQ1YWQ3NTRjZA==
-    networks:
-      - trooper-network
+
+networks: 
+  default:
+    name: trooper-network
+    external: true

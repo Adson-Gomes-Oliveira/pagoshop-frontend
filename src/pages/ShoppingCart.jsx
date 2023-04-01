@@ -51,6 +51,8 @@ function ShoppingCart() {
       productList: [...cartWithNoDiscount],
     };
 
+    console.log(responseUser);
+
     const responseOrder = await requester('orders', 'post', {
       orderInfos: newOrder,
       token: recoverToken,
