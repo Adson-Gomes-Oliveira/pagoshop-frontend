@@ -13,8 +13,8 @@ const getOneOrder = async ({ id, token }) => {
 };
 
 const createOrder = async ({ orderInfos, token }) => {
-  const requestStringOne = `http://${process.env.REACT_APP_ORDERS_HOST || '127.0.0.1'}`;
-  const requestStringTwo = `:${process.env.REACT_APP_ORDERS_PORT}/${process.env.REACT_APP_ORDERS_BASEURL}`;
+  const requestStringOne = `http://${process.env.REACT_APP_GATEWAY_HOST || '127.0.0.1'}`;
+  const requestStringTwo = `:${process.env.REACT_APP_GATEWAY_PORT}/${process.env.REACT_APP_ORDERS_BASEURL}`;
   const requestString = requestStringOne + requestStringTwo;
 
   const response = await axios.post(requestString, orderInfos, {
@@ -25,9 +25,9 @@ const createOrder = async ({ orderInfos, token }) => {
 };
 
 const confirmOrder = async ({ paymentInfos, id, token }) => {
-  const requestStringOne = `http://${process.env.REACT_APP_ORDERS_HOST || '127.0.0.1'}`;
-  const requestStringTwo = `:${process.env.REACT_APP_ORDERS_PORT}/${process.env.REACT_APP_ORDERS_BASEURL}`;
-  const requestStringThree = `${process.env.REACT_APP_ORDERS_CONFIRM_RESOURCE}/${id}`;
+  const requestStringOne = `http://${process.env.REACT_APP_GATEWAY_HOST || '127.0.0.1'}`;
+  const requestStringTwo = `:${process.env.REACT_APP_GATEWAY_PORT}/${process.env.REACT_APP_ORDERS_BASEURL}`;
+  const requestStringThree = `/confirm/${id}`;
   const requestString = requestStringOne + requestStringTwo + requestStringThree;
 
   const response = await axios.post(requestString, paymentInfos, {
