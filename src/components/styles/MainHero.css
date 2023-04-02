@@ -1,6 +1,5 @@
 .main-hero {
   background-color: rgba(0, 0, 0, 0.9);
-	background-size: cover;
   background-blend-mode: darken;
   min-width: 100%;
   min-height: 100vh;
@@ -15,4 +14,26 @@
 	width: auto; 
 	height: auto; 
 	z-index: -1000;
+  transform: scale(1.84);
+}
+
+.content-hero {
+  margin: 0 2.5rem 0 2.5rem;
+}
+
+
+/* Media Queries */
+
+@media screen and (min-width: 1920px) {
+  .hero-video {
+    position: absolute;
+    right: 0; 
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto; 
+    height: auto; 
+    z-index: -1000;
+    transform: scale(1);
+  }
 }

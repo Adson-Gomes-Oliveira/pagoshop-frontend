@@ -1,0 +1,78 @@
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  margin-top: 4rem;
+}
+
+.hero-content span:first-of-type {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.hero-content span:nth-child(2) {
+  font-size: 4rem;
+  font-weight: 700;
+  width: 60%;
+}
+
+.hero-content button {
+  background-color: #FF3D24;
+  width: 10%;
+  padding: 0.8rem 0 0.8rem 0;
+  font-size: 1rem;
+  margin-top: 4rem;
+  cursor: pointer;
+  border: 0.1rem solid #FF3D24;
+  transition: 0.3s ease;
+}
+
+.hero-content button:hover {
+  background-color: transparent;
+  border: 0.1rem solid white;
+  color: white;
+}
+
+.hero-content .add-info {
+  display: flex;
+  width: 60%;
+  align-items: center;
+  margin: 6rem 0 8rem 0;
+}
+
+.hero-content .add-info .info-add {
+  display: flex;
+  align-items: center;
+}
+
+.hero-content .add-info .info-add img {
+  width: 28%;
+}
+
+.hero-content .add-info .info-divisor {
+  width: 0.1%;
+  height: 4.5rem;
+  background-color: #FF3D24;
+  margin: 0 0.8rem 0 0.8rem;
+}
+
+.hero-content .add-info .info-add span {
+  font-size: 1rem;
+}
+
+
+/* Media Queries */
+
+@media screen and (min-width: 1920px) {
+  .hero-content span:nth-child(2) {
+    width: 40%;
+  }
+
+  .hero-content .add-info {
+    margin: 5rem 0 6rem 0;
+  }
+
+  .hero-content .add-info .info-add span {
+    width: 60%;
+  }
+}

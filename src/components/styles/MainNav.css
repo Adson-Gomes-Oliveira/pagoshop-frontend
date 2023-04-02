@@ -14,22 +14,9 @@
 .main-nav .highlight-categories ul li {
   margin: 1rem;
   cursor: pointer;
+  transition: 0.3s ease;
 }
 
-.menu-categories {
-  background-color: white;
-  flex-direction: column;
-  flex-wrap: wrap;
-  height: 10rem;
-  border-bottom: 0.2rem solid rgba(0, 0, 0, 0.1);
-  font-family: 'K2D';
-  padding: 0 0.8rem 0 0.8rem;
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: var(--green-theme-base);
-}
-
-.menu-categories span {
-  margin: 0.5rem 0 0.3rem 0;
-  cursor: pointer;
+.main-nav .highlight-categories ul li:hover {
+  color: #ff857c;
 }
