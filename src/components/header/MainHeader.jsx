@@ -3,8 +3,7 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import MainNav from './MainNav';
-import MainAd from './MainAd';
-import PagoShopLogo from '../../assets/svg/pago-shop-logo-white.svg';
+import TrooperLogo from '../../assets/svg/trooper-logo.svg';
 import PagoShopContext from '../../context/PagoShopContext';
 import requester from '../../helpers/requester';
 import '../styles/MainHeader.css';
@@ -57,58 +56,70 @@ function MainHeader() {
   const handleClickCart = async () => navigate('/shopping-cart');
 
   return (
-    <>
-      <MainAd />
-      <section className="main-header">
-        <div className="header-logo">
-          <a href="/"><img src={PagoShopLogo} alt="pago-shop-logo" /></a>
+    <section className="main-header">
+      <div className="header-first-section">
+        <div className="ad-header-first-section">
+          <span>Frete grátis em compras acima de R$ 150,00 para todo o Brasil !</span>
+          <span>Consulte o Regulamento *</span>
         </div>
-        <form className="header-search-bar">
-          <input
-            type="text"
-            id="searchBar"
-            onChange={handleSearchInputChange}
-            onKeyUp={handleEnter}
-            value={searchInput}
-          />
-          <button
-            type="button"
-            onClick={handleSearchButton}
-          >
-            <span className="material-icons-outlined">search</span>
-          </button>
-        </form>
-
-        {username === null ? (
-          <div className="login" onClick={handleRedirect}>
-            <span>Entre ou Cadastre-se</span>
-            <span className="material-icons-outlined">account_circle</span>
-          </div>
-        ) : (
-          <div className="logout">
-            <span>{username}</span>
+        <div className="content-header-first-section">
+          <form className="header-search-bar">
             <button
               type="button"
-              onClick={handleClickLogout}
+              onClick={handleSearchButton}
             >
-              <span>Sair</span>
-              <span className="material-icons-outlined">logout</span>
+              <span className="material-icons-outlined">search</span>
+            </button>
+            <input
+              type="text"
+              id="searchBar"
+              onChange={handleSearchInputChange}
+              onKeyUp={handleEnter}
+              value={searchInput}
+              placeholder="Buscar"
+            />
+          </form>
+
+          {username === null ? (
+            <div className="login" onClick={handleRedirect}>
+              <span>Entre ou Cadastre-se</span>
+              <span className="material-icons-outlined">account_circle</span>
+            </div>
+          ) : (
+            <div className="logout">
+              <span>{username}</span>
+              <button
+                type="button"
+                onClick={handleClickLogout}
+              >
+                <span>Sair</span>
+                <span className="material-icons-outlined">logout</span>
+              </button>
+            </div>
+          )}
+
+          <div className="shopping-cart">
+            <button
+              type="button"
+              onClick={handleClickCart}
+            >
+              <span className="material-icons-outlined">shopping_cart</span>
+              <div className="cart-counter">{cart.length}</div>
             </button>
           </div>
-        )}
-
-        <div className="shopping-cart">
-          <button
-            type="button"
-            onClick={handleClickCart}
-          >
-            <span className="material-icons-outlined">shopping_cart</span>
-            <div className="cart-counter">{cart.length}</div>
-          </button>
         </div>
-      </section>
-      <MainNav />
-    </>
+      </div>
+
+      <div className="header-divisor" />
+
+      <div className="header-second-section">
+        <div className="header-logo">
+          <img src={TrooperLogo} alt="pago-shop-logo" />
+          <h1>Trooper</h1>
+        </div>
+        <MainNav />
+      </div>
+    </section>
   );
 }
 
