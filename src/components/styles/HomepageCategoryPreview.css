@@ -1,0 +1,49 @@
+.homepage-category-preview {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  padding: 5rem 4rem 5rem 4rem;
+}
+
+.homepage-category-preview .preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.homepage-category-preview .preview-header h2 {
+  color: white;
+  font-weight: 400;
+}
+
+.homepage-category-preview .preview-header button {
+  background-color: transparent;
+  width: 10%;
+  padding: 0.8rem 0 0.8rem 0;
+  font-size: 1rem;
+  cursor: pointer;
+  border: 0.1rem solid white;
+  transition: 0.3s ease;
+  color: white;
+}
+
+.homepage-category-preview .preview-categories {
+  display: flex;
+  margin-top: 5rem;
+}
+
+.homepage-category-preview .category-showed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+.homepage-category-preview .category-showed img {
+  width: 70%;
+}
+
+.homepage-category-preview .category-showed span {
+  font-size: 1.3rem;
+  margin-top: 1rem;
+}

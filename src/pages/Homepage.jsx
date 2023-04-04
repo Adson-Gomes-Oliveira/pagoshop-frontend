@@ -1,13 +1,13 @@
 import React from 'react';
 // import MainHeader from '../components/header/MainHeader';
 import MainHero from '../components/header/MainHero';
-import Products from '../components/products/Products';
+import HomepageCategoryPreview from '../components/homepage/HomepageCategoryPreview';
 
 function Homepage() {
   return (
     <>
       <MainHero />
-      <Products />
+      <HomepageCategoryPreview />
     </>
   );
 }

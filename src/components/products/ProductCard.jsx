@@ -12,7 +12,7 @@ function ProductCard({ info }) {
     _id,
     product,
     thumbnail,
-    unit_price: unitPrice,
+    unitPrice,
   } = info;
 
   return (
