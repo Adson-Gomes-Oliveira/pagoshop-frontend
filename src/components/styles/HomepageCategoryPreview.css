@@ -27,6 +27,12 @@
   color: white;
 }
 
+.homepage-category-preview .preview-header button:hover {
+  background-color: #FF3D24;
+  border: 0.1rem solid #FF3D24;
+  color: white;
+}
+
 .homepage-category-preview .preview-categories {
   display: flex;
   margin-top: 5rem;
