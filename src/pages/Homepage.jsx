@@ -6,6 +6,7 @@ import HomepageInfoSeeMore from '../components/homepage/HomepageInfoSeeMore';
 import HomepageBestSeller from '../components/homepage/HomepageBestSeller';
 import HomepageAdBox from '../components/homepage/HomepageAdBox';
 import HomepageSupportedBy from '../components/homepage/HomepageSupportedBy';
+import Footer from '../components/Footer';
 
 function Homepage() {
   return (
@@ -16,6 +17,7 @@ function Homepage() {
       <HomepageBestSeller />
       <HomepageAdBox />
       <HomepageSupportedBy />
+      <Footer />
     </>
   );
 }
