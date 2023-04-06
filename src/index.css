@@ -4,6 +4,7 @@
   padding: 0;
   border-color: transparent;
   list-style: none;
+  overflow-x: hidden;
   --green-theme-base: #025814;
   --green-theme-darken: #014911;
   --purple-theme-base: #330C2F;
