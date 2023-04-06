@@ -1,0 +1,72 @@
+.homepage-best-seller {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  padding: 6rem 2rem 6rem 2rem;
+}
+
+.homepage-best-seller h2 {
+  color: white;
+  font-weight: 400;
+  font-size: 2.3rem;
+  margin-bottom: 2rem;
+}
+
+.homepage-best-seller .best-seller-cards {
+  display: flex;
+  justify-content: space-around;
+}
+
+.homepage-best-seller .best-seller-cards .product-card {
+  display: flex;
+  flex-direction: column;
+  width: 16%;
+}
+
+.homepage-best-seller .best-seller-cards .product-card .card-thumbnail {
+  height: 18rem;
+  background-position: center;
+  background-color: rgba(151, 151, 151, 0.5);
+  background-blend-mode: darken;
+  background-size: cover;
+}
+
+.homepage-best-seller .best-seller-cards .product-card .card-thumbnail div {
+  background-color: #FF3D24;
+  width: 50%;
+  padding: 0.2rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.homepage-best-seller .best-seller-cards .product-card .card-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.homepage-best-seller .best-seller-cards .product-card .card-info span:first-of-type {
+  color: white;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-top: 1rem;
+}
+
+.homepage-best-seller .best-seller-cards .product-card .card-info span:nth-child(2) {
+  color: rgb(214, 214, 214);
+  margin-bottom: 1rem;
+}
+
+.homepage-best-seller .best-seller-cards .product-card .card-info button {
+  background-color: transparent;
+  padding: 0.8rem 0 0.8rem 0;
+  font-size: 1rem;
+  cursor: pointer;
+  border: 0.1rem solid white;
+  transition: 0.3s ease;
+  color: white;
+}
+
+.homepage-best-seller .best-seller-cards .product-card .card-info button:hover {
+  color: rgb(202, 202, 202);
+}

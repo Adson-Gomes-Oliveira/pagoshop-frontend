@@ -3,6 +3,7 @@ import React from 'react';
 import MainHero from '../components/header/MainHero';
 import HomepageCategoryPreview from '../components/homepage/HomepageCategoryPreview';
 import HomepageInfoSeeMore from '../components/homepage/HomepageInfoSeeMore';
+import HomepageBestSeller from '../components/homepage/HomepageBestSeller';
 
 function Homepage() {
   return (
@@ -10,6 +11,7 @@ function Homepage() {
       <MainHero />
       <HomepageCategoryPreview />
       <HomepageInfoSeeMore />
+      <HomepageBestSeller />
     </>
   );
 }
