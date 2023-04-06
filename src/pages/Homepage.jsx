@@ -4,6 +4,7 @@ import MainHero from '../components/header/MainHero';
 import HomepageCategoryPreview from '../components/homepage/HomepageCategoryPreview';
 import HomepageInfoSeeMore from '../components/homepage/HomepageInfoSeeMore';
 import HomepageBestSeller from '../components/homepage/HomepageBestSeller';
+import HomepageAdBox from '../components/homepage/HomepageAdBox';
 
 function Homepage() {
   return (
@@ -12,6 +13,7 @@ function Homepage() {
       <HomepageCategoryPreview />
       <HomepageInfoSeeMore />
       <HomepageBestSeller />
+      <HomepageAdBox />
     </>
   );
 }
