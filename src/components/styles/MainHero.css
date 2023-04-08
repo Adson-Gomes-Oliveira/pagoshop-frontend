@@ -17,10 +17,9 @@
   transform: scale(1.84);
 }
 
-.content-hero {
+.content-hero section:last-of-type {
   margin: 0 2.5rem 0 2.5rem;
 }
-
 
 /* Media Queries */
 

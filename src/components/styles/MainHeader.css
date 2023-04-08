@@ -4,6 +4,7 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 1rem 0rem 0rem 0rem;
+  margin: 0 3rem 0 3rem;
 }
 
 .main-header .header-first-section {

@@ -9,10 +9,8 @@ import '../styles/MainHero.css';
 function MainHero() {
   return (
     <section className="main-hero">
-      <div className="content-hero">
-        <MainHeader />
-        <HeroContent />
-      </div>
+      <MainHeader />
+      <HeroContent />
       <video autoPlay muted loop className="hero-video" width="300px" height="100px">
         <source src={HeroVideoMP4} type="video/mp4" />
         <source src={HeroVideoWEBM} type="video/webm" />

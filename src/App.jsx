@@ -6,6 +6,7 @@ import Login from './pages/Login';
 import PrivateRoute from './components/PrivateRoute';
 import ShoppingCart from './pages/ShoppingCart';
 import Checkout from './pages/Checkout';
+import ProductsByCategory from './pages/ProductsByCategory';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Route path="/" element={<Homepage />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<h1>ACCOUNT_REGISTER</h1>} />
+      <Route path="/category/:id" element={<ProductsByCategory />} />
       <Route path="/products/:id" element={<ProductDetails />} />
       <Route path="*" element={<h1>NOTHING_HERE</h1>} />
     </Routes>

@@ -8,6 +8,7 @@ import payment from '../api/payments';
 
 const categories = {
   get: category.getAllCategories,
+  getOne: category.getOneCategory,
 };
 
 const accounts = {

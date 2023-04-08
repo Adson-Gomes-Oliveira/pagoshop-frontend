@@ -1,33 +1,30 @@
 import React from 'react';
 import { v4 as uuid } from 'uuid';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import formatNumberToPrice from '../../helpers/formatNumber';
-import '../styles/Products.css';
 
 const NO_IMG_URL = 'https://thumbs.dreamstime.com/b/no-thumbnail-image-placeholder-forums-blogs-websites-148010362.jpg';
 
-function ProductCard({ info }) {
-  const {
-    _id,
-    product,
-    thumbnail,
-    unitPrice,
-  } = info;
+function ProductCard({ products }) {
+  const cards = products && products.map((product) => {
+    const { product: name, unitPrice, thumbnail } = product;
 
-  return (
-    <div key={uuid()} className="product-card">
-      <Link to={`/products/${_id}`} style={{ textDecoration: 'none', color: 'black' }}>
-        <span className="title">{product}</span>
-        <img src={thumbnail || NO_IMG_URL} alt={product} />
-        <div className="price">
-          <span>À Vista ou no Cartão de Crédito</span>
-          <span>Até 12 X sem juros</span>
-          <span>{`R$ ${formatNumberToPrice(unitPrice)}`}</span>
+    return (
+      <div className="product-card" key={uuid()}>
+        <div className="card-thumbnail" style={{ backgroundImage: `url(${thumbnail || NO_IMG_URL})` }}>
+          <div><span>Mais vendidos</span></div>
         </div>
-      </Link>
-    </div>
-  );
+        <div className="card-info">
+          <span>{name}</span>
+          <span>{`R$ ${formatNumberToPrice(unitPrice)}`}</span>
+          <button type="button">Adicionar ao carrinho</button>
+        </div>
+      </div>
+    );
+  });
+
+  return cards;
 }
 
 ProductCard.propTypes = {

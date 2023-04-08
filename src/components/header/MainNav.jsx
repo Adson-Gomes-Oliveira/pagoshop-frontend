@@ -1,16 +1,13 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { v4 as uuid } from 'uuid';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import requester from '../../helpers/requester';
-import PagoShopContext from '../../context/PagoShopContext';
 import '../styles/MainNav.css';
 
 function MainNav() {
   const [categories, setCategories] = useState([]);
-  const { setFilterCategory } = useContext(PagoShopContext);
-  const location = useLocation();
   const navigate = useNavigate();
 
   const requestCategories = async () => {
@@ -26,10 +23,8 @@ function MainNav() {
 
   const handleClickCategory = (event) => {
     const { id } = event.target;
-    setFilterCategory(id);
-    if (location.pathname !== '/') {
-      navigate('/');
-    }
+    navigate(`/category/${id}`);
+    navigate(0);
   };
 
   return (
@@ -38,7 +33,7 @@ function MainNav() {
         <ul>
           {categories.map((fixCat) => (
             <li
-              id={fixCat.name}
+              id={fixCat._id}
               key={uuid()}
               onClick={handleClickCategory}
             >
