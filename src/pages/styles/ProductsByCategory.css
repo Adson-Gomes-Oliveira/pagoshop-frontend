@@ -89,6 +89,14 @@
   animation: slideDown 0.3s ease-in-out forwards;
 }
 
+.products-by-category .products .product-filters .filters ul li {
+  cursor: pointer;
+}
+
+.products-by-category .products .product-filters .filters ul li:hover {
+  color: white;
+}
+
 .products-by-category .products .product-cards {
   width: 82%;
   margin: 0 2rem 0 2rem;
@@ -118,13 +126,14 @@
 
 .products-by-category .products .product-cards .cards {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .products-by-category .products .product-cards .cards .product-card {
   display: flex;
   flex-direction: column;
   width: 20%;
-  margin-right: 2.5rem;
+  margin: 0 2.5rem 2rem 0;
 }
 
 .products-by-category .products .product-cards .cards .product-card .card-thumbnail div {
