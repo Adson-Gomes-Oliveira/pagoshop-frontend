@@ -11,6 +11,7 @@ import './styles/ProductsByCategory.css';
 function ProductsByCategory() {
   const [products, setProducts] = useState([]);
   const [category, setCategory] = useState({});
+  const [expandFilter, setExpandFilter] = useState('none');
   const { requestProducts } = useContext(PagoShopContext);
   const { id } = useParams();
 
@@ -27,6 +28,12 @@ function ProductsByCategory() {
     requestProductsAndFilterByCategory();
   }, []);
 
+  const handleExpandFilterClick = () => {
+    if (expandFilter === 'none') return setExpandFilter('flex');
+    if (expandFilter === 'flex') return setExpandFilter('none');
+    return null;
+  };
+
   return (
     <>
       <section className="products-by-category">
@@ -39,9 +46,14 @@ function ProductsByCategory() {
             <div className="filters">
               <div className="filters-header">
                 <span>Categoria</span>
-                <button type="button">+</button>
+                <button
+                  type="button"
+                  onClick={handleExpandFilterClick}
+                >
+                  { expandFilter === 'none' ? '+' : '-'}
+                </button>
               </div>
-              <ul>
+              <ul style={{ display: expandFilter, flexDirection: 'column' }}>
                 {Object.keys(category).length > 0 && category.subCategories.map((cat) => (
                   <li key={uuid()}>{cat}</li>
                 ))}

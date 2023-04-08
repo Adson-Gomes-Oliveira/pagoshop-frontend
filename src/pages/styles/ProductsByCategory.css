@@ -54,12 +54,39 @@
   color: white;
   font-size: 1.8rem;
   font-weight: 100;
+  cursor: pointer;
+}
+
+@keyframes slideDown {
+  0% { 
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  0% { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
 }
 
 .products-by-category .products .product-filters .filters ul {
   margin-top: 1rem;
   color: rgb(211, 211, 211);
   font-weight: 200;
+  opacity: 0;
+  animation: slideDown 0.3s ease-in-out forwards;
 }
 
 .products-by-category .products .product-cards {
