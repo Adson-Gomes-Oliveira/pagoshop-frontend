@@ -142,7 +142,6 @@
 
 .products-by-category .products .product-cards .cards .product-card .card-thumbnail {
   height: 18rem;
-  background-position: center;
   background-color: rgba(151, 151, 151, 0.5);
   background-blend-mode: darken;
   background-size: 140%;
