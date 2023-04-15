@@ -12,6 +12,10 @@
   --amaranth-theme-base: #b70b28;
 }
 
+a {
+  text-decoration: none;
+}
+
 @font-face {
   font-family: 'K2D';
   src: url('./assets/fonts/K2D-Regular.ttf');

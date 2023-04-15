@@ -113,10 +113,10 @@ function MainHeader() {
       <div className="header-divisor" />
 
       <div className="header-second-section">
-        <div className="header-logo">
+        <a className="header-logo" href="/">
           <img src={TrooperLogo} alt="pago-shop-logo" />
           <h1>Trooper</h1>
-        </div>
+        </a>
         <MainNav />
       </div>
     </section>
