@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../styles/ConfirmBuyModal.css';
+import './styles/ConfirmBuyModal.css';
 
 function ConfirmBuyModal({ toggleOff }) {
   const handleClickClose = () => {

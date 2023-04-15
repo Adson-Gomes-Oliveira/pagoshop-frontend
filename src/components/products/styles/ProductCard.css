@@ -1,0 +1,55 @@
+.product-card {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  margin: 0 2.5rem 2rem 0;
+}
+
+.product-card .card-thumbnail div {
+  display: none;
+}
+
+.product-card .card-thumbnail {
+  height: 18rem;
+  background-color: rgba(151, 151, 151, 0.5);
+  background-blend-mode: darken;
+  background-size: 140%;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.product-card:hover .card-thumbnail {
+  background-size: 170%;
+}
+
+.product-card .card-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card .card-info span:first-of-type {
+  color: white;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-top: 1rem;
+}
+
+.product-card .card-info span:nth-child(2) {
+  color: rgb(214, 214, 214);
+  margin-bottom: 1rem;
+}
+
+.product-card .card-info button {
+  background-color: transparent;
+  padding: 0.8rem 0 0.8rem 0;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+  border: 0.1rem solid white;
+  color: white;
+}
+
+.product-card:hover button {
+  color: rgb(202, 202, 202);
+}

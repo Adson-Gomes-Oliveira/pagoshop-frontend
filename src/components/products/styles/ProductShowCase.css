@@ -1,0 +1,41 @@
+.product-show-case {
+  width: 82%;
+  margin: 0 2rem 0 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-show-case select {
+  width: 20%;
+  align-self: flex-end;
+  padding: 0.7rem;
+  font-size: 1rem;
+  background-color: transparent;
+  border: 0.01rem solid rgb(211, 211, 211);
+  color: white;
+  margin-bottom: 4rem;
+}
+
+.product-show-case select:focus {
+  outline: 0;
+}
+
+.product-show-case select option {
+  font-size: 1rem;
+  background-color: black;
+}
+
+.product-show-case .cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product-show-case .cards .product-card .card-info button {
+  border: 0.1rem solid transparent;
+  color: transparent;
+}
+
+.product-show-case .cards .product-card .card-info button:hover {
+  border: 0.1rem solid white;
+  color: white;
+}

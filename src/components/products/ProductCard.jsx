@@ -3,6 +3,7 @@ import { v4 as uuid } from 'uuid';
 import PropTypes from 'prop-types';
 // import { Link } from 'react-router-dom';
 import formatNumberToPrice from '../../helpers/formatNumber';
+import './styles/ProductCard.css';
 
 const NO_IMG_URL = 'https://thumbs.dreamstime.com/b/no-thumbnail-image-placeholder-forums-blogs-websites-148010362.jpg';
 

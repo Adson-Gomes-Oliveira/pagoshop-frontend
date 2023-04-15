@@ -1,0 +1,83 @@
+.product-filters {
+  display: flex;
+  flex-direction: column;
+  width: 15%;
+}
+
+.product-filters h3 {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 200;
+}
+
+.product-filters .divisor {
+  background-color: rgb(211, 211, 211);
+  width: 100%;
+  height: 0.01rem;
+  margin: 1rem 0 1rem 0;
+}
+
+.product-filters .filters {
+  color: white;
+}
+
+.product-filters .filters .filters-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-filters .filters .filters-header span {
+  font-size: 1.1rem;
+  font-weight: 200;
+}
+
+.product-filters .filters .filters-header button {
+  background-color: transparent;
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 100;
+  cursor: pointer;
+}
+
+@keyframes slideDown {
+  0% { 
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  0% { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+}
+
+.product-filters .filters ul {
+  margin-top: 1rem;
+  opacity: 0;
+  animation: slideDown 0.3s ease-in-out forwards;
+}
+
+.product-filters .filters ul li button {
+  cursor: pointer;
+  background-color: transparent;
+  color: rgb(211, 211, 211);
+  font-weight: 200;
+  font-size: 0.9rem;
+}
+
+.product-filters .filters ul li button:hover {
+  color: white;
+}

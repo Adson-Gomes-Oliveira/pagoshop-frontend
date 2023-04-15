@@ -56,17 +56,3 @@
   color: rgb(214, 214, 214);
   margin-bottom: 1rem;
 }
-
-.homepage-best-seller .best-seller-cards .product-card .card-info button {
-  background-color: transparent;
-  padding: 0.8rem 0 0.8rem 0;
-  font-size: 1rem;
-  cursor: pointer;
-  border: 0.1rem solid white;
-  transition: 0.3s ease;
-  color: white;
-}
-
-.homepage-best-seller .best-seller-cards .product-card .card-info button:hover {
-  color: rgb(202, 202, 202);
-}

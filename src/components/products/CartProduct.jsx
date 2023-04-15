@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { v4 as uuid } from 'uuid';
 import formatNumberToPrice from '../../helpers/formatNumber';
 import PagoShopContext from '../../context/PagoShopContext';
-import '../styles/CartProduct.css';
+import './styles/CartProduct.css';
 
 function CartProduct({ info }) {
   const {
