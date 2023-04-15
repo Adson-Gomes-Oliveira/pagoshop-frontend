@@ -5,6 +5,7 @@ import requester from '../helpers/requester';
 
 function PagoShopProvider({ children }) {
   const [query, setQuery] = useState('');
+  const [categories, setCategories] = useState();
   const [filterCategory, setFilterCategory] = useState('');
   const [orderId, setOrderId] = useState('');
   const [cart, setCart] = useState([]);
@@ -13,6 +14,17 @@ function PagoShopProvider({ children }) {
     const productsResponse = await requester('products', 'get');
     return productsResponse;
   };
+
+  const requestCategories = async () => {
+    const categoriesResponse = await requester('categories', 'get');
+    const firstCategories = categoriesResponse.slice(0, 6);
+
+    setCategories(firstCategories);
+  };
+
+  useEffect(() => {
+    requestCategories();
+  }, []);
 
   useEffect(() => {
     const recoverPreviousCart = localStorage.getItem('shopping-cart');
@@ -35,7 +47,9 @@ function PagoShopProvider({ children }) {
     setCart,
     orderId,
     setOrderId,
-  }), [cart, query, filterCategory, orderId]);
+    categories,
+    setCategories,
+  }), [cart, query, filterCategory, orderId, categories]);
 
   return (
     <PagoShopContext.Provider value={value}>
