@@ -85,7 +85,7 @@ function ProductsByCategory() {
             <div className="divisor" />
           </div>
           <div className="product-cards">
-            <select>
+            <select style={{ display: 'none' }}>
               <option value="selectBy">Selecionar por</option>
               <option value="price-lower-to-higher">Preço (menor ao maior)</option>
               <option value="price-higher-to-lower">Preço (maior ao menor)</option>
