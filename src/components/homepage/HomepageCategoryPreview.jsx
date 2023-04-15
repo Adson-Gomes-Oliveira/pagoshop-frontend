@@ -34,10 +34,10 @@ function HomepageCategoryPreview() {
         {categories && categories.map((cat) => {
           const { name, thumbnail } = cat;
           return (
-            <div className="category-showed" key={uuid()}>
+            <a href={`/category/${cat._id}`} className="category-showed" key={uuid()}>
               <div className="image-div" style={{ backgroundImage: `url(${thumbnail})` }} />
               <span>{name}</span>
-            </div>
+            </a>
           );
         })}
       </div>
