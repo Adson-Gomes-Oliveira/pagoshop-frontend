@@ -4,7 +4,7 @@ import DcLogo from '../../assets/images/logo-dc.png';
 import NetflixLogo from '../../assets/images/logo-netflix.png';
 import UniversalLogo from '../../assets/images/logo-universal.png';
 import PrimeLogo from '../../assets/images/logo-prime.png';
-import '../styles/HomepageSupportedBy.css';
+import './styles/HomepageSupportedBy.css';
 
 function HomepageSupportedBy() {
   return (

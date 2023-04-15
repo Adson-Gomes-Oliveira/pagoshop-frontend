@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/HomepageAdBox.css';
+import './styles/HomepageAdBox.css';
 
 function HomepageAdBox() {
   return (

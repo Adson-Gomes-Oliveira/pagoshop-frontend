@@ -4,7 +4,7 @@ import MainHeader from '../header/MainHeader';
 import HeroContent from './HeroContent';
 import HeroVideoMP4 from '../../assets/videos/hero-video.mp4';
 import HeroVideoWEBM from '../../assets/videos/hero-video.webm';
-import '../styles/MainHero.css';
+import './styles/MainHero.css';
 
 function MainHero() {
   return (

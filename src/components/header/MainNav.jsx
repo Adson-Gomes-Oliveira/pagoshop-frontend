@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { v4 as uuid } from 'uuid';
 import { useNavigate } from 'react-router-dom';
 import requester from '../../helpers/requester';
-import '../styles/MainNav.css';
+import './styles/MainNav.css';
 
 function MainNav() {
   const [categories, setCategories] = useState([]);

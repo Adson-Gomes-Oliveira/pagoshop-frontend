@@ -6,7 +6,7 @@ import MainNav from './MainNav';
 import TrooperLogo from '../../assets/svg/trooper-logo.svg';
 import PagoShopContext from '../../context/PagoShopContext';
 import requester from '../../helpers/requester';
-import '../styles/MainHeader.css';
+import './styles/MainHeader.css';
 
 function MainHeader() {
   const [searchInput, setSearchInput] = useState('');

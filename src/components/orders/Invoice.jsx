@@ -7,7 +7,7 @@ import html2canvas from 'html2canvas';
 import requester from '../../helpers/requester';
 import PagoShopContext from '../../context/PagoShopContext';
 import formatNumberToPrice from '../../helpers/formatNumber';
-import '../styles/Invoice.css';
+import './styles/Invoice.css';
 
 function Invoice({ info }) {
   const [orderPayment, setOrderPayment] = useState();

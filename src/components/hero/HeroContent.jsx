@@ -2,7 +2,7 @@ import React from 'react';
 import FlashLogo from '../../assets/svg/flash-logo.svg';
 import GotLogo from '../../assets/svg/got-logo.svg';
 import KonohaLogo from '../../assets/svg/konoha-logo.svg';
-import '../styles/HeroContent.css';
+import './styles/HeroContent.css';
 
 function HeroContent() {
   return (

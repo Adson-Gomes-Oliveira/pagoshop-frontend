@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import PagoShopContext from '../../context/PagoShopContext';
 import ProductCard from '../products/ProductCard';
-import '../styles/HomepageBestSeller.css';
+import './styles/HomepageBestSeller.css';
 
 function HomepageBestSeller() {
   const [products, setProducts] = useState([]);

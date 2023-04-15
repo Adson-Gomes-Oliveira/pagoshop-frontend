@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/HomepageInfoSeeMore.css';
+import './styles/HomepageInfoSeeMore.css';
 
 function HomepageInfoSeeMore() {
   return (

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { v4 as uuid } from 'uuid';
 import requester from '../../helpers/requester';
-import '../styles/HomepageCategoryPreview.css';
+import './styles/HomepageCategoryPreview.css';
 
 function HomepageCategoryPreview() {
   const [categories, setCategories] = useState([]);

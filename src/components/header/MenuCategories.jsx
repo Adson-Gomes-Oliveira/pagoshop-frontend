@@ -5,7 +5,7 @@ import { v4 as uuid } from 'uuid';
 import { useLocation, useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import PagoShopContext from '../../context/PagoShopContext';
-import '../styles/MainNav.css';
+import './styles/MainNav.css';
 
 function MenuCategories({ displayMenuCategories, categories }) {
   const { setFilterCategory } = useContext(PagoShopContext);
