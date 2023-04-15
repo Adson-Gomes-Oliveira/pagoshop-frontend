@@ -83,17 +83,19 @@
 
 .products-by-category .products .product-filters .filters ul {
   margin-top: 1rem;
-  color: rgb(211, 211, 211);
-  font-weight: 200;
   opacity: 0;
   animation: slideDown 0.3s ease-in-out forwards;
 }
 
-.products-by-category .products .product-filters .filters ul li {
+.products-by-category .products .product-filters .filters ul li button {
   cursor: pointer;
+  background-color: transparent;
+  color: rgb(211, 211, 211);
+  font-weight: 200;
+  font-size: 0.9rem;
 }
 
-.products-by-category .products .product-filters .filters ul li:hover {
+.products-by-category .products .product-filters .filters ul li button:hover {
   color: white;
 }
 

@@ -10,8 +10,10 @@ import './styles/ProductsByCategory.css';
 
 function ProductsByCategory() {
   const [products, setProducts] = useState([]);
+  const [productsFiltered, setProductsFiltered] = useState([]);
   const [category, setCategory] = useState({});
   const [expandFilter, setExpandFilter] = useState('none');
+  const [filterCategory, setFilterCategory] = useState('');
   const { requestProducts } = useContext(PagoShopContext);
   const { id } = useParams();
 
@@ -21,12 +23,18 @@ function ProductsByCategory() {
     const filterByCategory = responseProducts.filter((prod) => prod.category === id);
 
     setProducts(filterByCategory);
+    setProductsFiltered(filterByCategory);
     setCategory(responseCategory);
   };
 
   useEffect(() => {
     requestProductsAndFilterByCategory();
   }, []);
+
+  useEffect(() => {
+    const productsByFilter = products.filter((prod) => prod.subCategory[0] === filterCategory);
+    setProductsFiltered(productsByFilter);
+  }, [filterCategory]);
 
   const handleExpandFilterClick = () => {
     if (expandFilter === 'none') return setExpandFilter('flex');
@@ -54,8 +62,23 @@ function ProductsByCategory() {
                 </button>
               </div>
               <ul style={{ display: expandFilter, flexDirection: 'column' }}>
+                <li key={uuid()}>
+                  <button
+                    type="button"
+                    onClick={() => setProductsFiltered(products)}
+                  >
+                    Geral
+                  </button>
+                </li>
                 {Object.keys(category).length > 0 && category.subCategories.map((cat) => (
-                  <li key={uuid()}>{cat}</li>
+                  <li key={uuid()}>
+                    <button
+                      type="button"
+                      onClick={() => setFilterCategory(cat)}
+                    >
+                      {cat}
+                    </button>
+                  </li>
                 ))}
               </ul>
             </div>
@@ -70,7 +93,7 @@ function ProductsByCategory() {
               <option value="z-a">Nome Z-A</option>
             </select>
             <div className="cards">
-              <ProductCard products={products} />
+              <ProductCard products={productsFiltered} />
             </div>
           </div>
         </div>
