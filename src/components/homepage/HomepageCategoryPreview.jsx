@@ -8,11 +8,12 @@ function HomepageCategoryPreview() {
 
   const requestAllCategories = async () => {
     const response = await requester('categories', 'get');
-
     const slicingCategories = response.slice(0, 3);
 
     setCategories(slicingCategories);
   };
+
+  const handleShopClick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
   useEffect(() => {
     requestAllCategories();
@@ -22,7 +23,12 @@ function HomepageCategoryPreview() {
     <section className="homepage-category-preview">
       <div className="preview-header">
         <h2>Comprar por categoria</h2>
-        <button type="button">Loja</button>
+        <button
+          type="button"
+          onClick={handleShopClick}
+        >
+          Loja
+        </button>
       </div>
       <div className="preview-categories">
         {categories && categories.map((cat) => {
