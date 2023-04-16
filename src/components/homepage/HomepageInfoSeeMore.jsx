@@ -29,7 +29,6 @@ function HomepageInfoSeeMore() {
           </div>
         </div>
       </div>
-      <button type="button">Saiba mais</button>
     </section>
   );
 }

@@ -30,6 +30,7 @@
 
 .homepage-info-see-more .see-more-second-section .second-pair {
   display: flex;
+  margin-bottom: 6rem;
 }
 
 .homepage-info-see-more .see-more-second-section .additional-info {
@@ -40,21 +41,4 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-}
-
-.homepage-info-see-more button {
-  background-color: #FF3D24;
-  width: 10%;
-  padding: 0.8rem 0 0.8rem 0;
-  font-size: 1rem;
-  margin: 4rem 0 4rem 0;
-  cursor: pointer;
-  border: 0.1rem solid #FF3D24;
-  transition: 0.3s ease;
-}
-
-.homepage-info-see-more button:hover {
-  background-color: transparent;
-  border: 0.1rem solid white;
-  color: white;
 }

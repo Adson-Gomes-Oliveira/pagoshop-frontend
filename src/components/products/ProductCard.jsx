@@ -9,18 +9,17 @@ import './styles/ProductCard.css';
 const NO_IMG_URL = 'https://thumbs.dreamstime.com/b/no-thumbnail-image-placeholder-forums-blogs-websites-148010362.jpg';
 
 function ProductCard({ products }) {
-  const { setShowPreviewCartModel } = useContext(PagoShopContext);
+  const { setShowPreviewCartModel, cart, setCart } = useContext(PagoShopContext);
 
-  const increaseProductQuantityInCart = (parsedCart, productInCart) => {
-    const productIndex = parsedCart.findIndex((prod) => prod.name === productInCart.name);
-    const newCart = parsedCart;
+  const increaseProductQuantityInCart = (productInCart) => {
+    const productIndex = cart.findIndex((prod) => prod.name === productInCart.name);
+    const newCart = cart;
     newCart[productIndex].quantity += 1;
 
-    localStorage.setItem('shopping-cart', JSON.stringify(newCart));
+    setCart([...newCart]);
   };
 
-  const addProductToCart = (parsedCart, productToAdd) => {
-    const newCart = parsedCart;
+  const addProductToCart = (productToAdd) => {
     const newProduct = {
       id: productToAdd._id,
       name: productToAdd.product,
@@ -29,17 +28,13 @@ function ProductCard({ products }) {
       quantity: 1,
     };
 
-    newCart.push(newProduct);
-
-    localStorage.setItem('shopping-cart', JSON.stringify(newCart));
+    setCart([...cart, newProduct]);
   };
 
   const handleAddToCartClick = (product) => {
-    const parsedCart = JSON.parse(localStorage.getItem('shopping-cart'));
-    const productInCart = parsedCart.find((prod) => prod.name === product.product);
-
-    if (productInCart) increaseProductQuantityInCart(parsedCart, productInCart);
-    if (!productInCart) addProductToCart(parsedCart, product);
+    const productInCart = cart.find((prod) => prod.id === product._id);
+    if (productInCart) increaseProductQuantityInCart(productInCart);
+    if (!productInCart) addProductToCart(product);
 
     setShowPreviewCartModel(true);
   };

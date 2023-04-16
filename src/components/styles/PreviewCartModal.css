@@ -1,0 +1,125 @@
+@keyframes slideToLeft {
+  0% {
+    right: -100%
+  }
+  100% {
+    right: 0
+  }
+}
+
+.preview-card-modal {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 28%;
+  background-color: black;
+  z-index: 9999;
+  height: 100vh;
+  animation: slideToLeft 0.3s ease-in-out forwards;
+}
+
+.preview-card-modal .modal-header {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 2rem 1.5rem 2rem;
+}
+
+.preview-card-modal .modal-header button {
+  background-color: transparent;
+}
+
+.preview-card-modal .modal-header button span {
+  font-size: 2.5rem;
+  font-weight: 100;
+}
+
+.preview-card-modal .modal-header span:nth-child(2) {
+  font-size: 1.5rem;
+  font-weight: 100;
+  margin-left: 23%;
+}
+
+.preview-card-modal .modal-products {
+  margin: 1rem 2.5rem 0 2.5rem;
+  height: 20rem;
+}
+
+.preview-card-modal .modal-products::-webkit-scrollbar {
+  display: none;
+}
+
+.preview-card-modal .modal-products .modal-products-item {
+  display: flex;
+}
+
+.preview-card-modal .modal-products .divisor {
+  height: 0.01rem;
+  background-color: rgb(151, 151, 151);
+  margin: 1.5rem 0 1.5rem 0;
+}
+
+.preview-card-modal .modal-products .modal-products-item img {
+  width: 55%;
+  height: 6rem;
+}
+
+.preview-card-modal .modal-products .modal-products-item .item-infos {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+}
+
+.preview-card-modal .modal-products .modal-products-item .item-infos span:first-of-type {
+  color: rgb(197, 197, 197);
+}
+
+.preview-card-modal .modal-products .modal-products-item .item-infos .item-price {
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+.preview-card-modal .modal-products .modal-products-item .item-infos span {
+  color: white;
+}
+
+.preview-card-modal .modal-products .modal-products-item .item-infos .info-quantity-control {
+  border: 0.1rem solid white;
+  width: fit-content;
+  padding: 0.2rem 0.3rem 0.2rem 0.3rem;
+}
+
+.preview-card-modal .modal-products .modal-products-item .item-infos .info-quantity-control button {
+  background-color: transparent;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.preview-card-modal .modal-products .modal-products-item .item-infos .info-quantity-control span {
+  margin: 0 0.8rem 0 0.8rem;
+  font-size: 0.85rem;
+}
+
+.preview-card-modal .modal-price {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-size: 1.5rem;
+  margin: 2.5rem 1.5rem 2.5rem 1.5rem;
+}
+
+.preview-card-modal .modal-price span {
+  overflow: hidden;
+}
+
+.preview-card-modal .cart-details-button {
+  background-color: #FF3D24;
+  width: 100%;
+  padding: 0.8rem 0 0.8rem 0;
+  font-size: 1rem;
+  cursor: pointer;
+  border: 0.1rem solid #FF3D24;
+  transition: 0.3s ease;
+}

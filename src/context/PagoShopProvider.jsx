@@ -2,6 +2,7 @@ import React, { useMemo, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import PagoShopContext from './PagoShopContext';
 import requester from '../helpers/requester';
+import formatNumberToPrice from '../helpers/formatNumber';
 
 function PagoShopProvider({ children }) {
   const [query, setQuery] = useState('');
@@ -9,6 +10,7 @@ function PagoShopProvider({ children }) {
   const [filterCategory, setFilterCategory] = useState('');
   const [orderId, setOrderId] = useState('');
   const [cart, setCart] = useState([]);
+  const [showPreviewCartModel, setShowPreviewCartModel] = useState(false);
 
   const requestProducts = async () => {
     const productsResponse = await requester('products', 'get');
@@ -37,7 +39,16 @@ function PagoShopProvider({ children }) {
     localStorage.setItem('shopping-cart', JSON.stringify(cart));
   }, [cart]);
 
+  const totalPrice = () => {
+    const pricesInCart = cart.map((prod) => prod.price * prod.quantity);
+    const totalPriceInCart = pricesInCart.reduce((prev, crr) => prev + crr, 0);
+    const priceFormated = formatNumberToPrice(totalPriceInCart);
+
+    return priceFormated;
+  };
+
   const value = useMemo(() => ({
+    totalPrice,
     requestProducts,
     query,
     setQuery,
@@ -49,7 +60,9 @@ function PagoShopProvider({ children }) {
     setOrderId,
     categories,
     setCategories,
-  }), [cart, query, filterCategory, orderId, categories]);
+    showPreviewCartModel,
+    setShowPreviewCartModel,
+  }), [cart, query, filterCategory, orderId, categories, showPreviewCartModel]);
 
   return (
     <PagoShopContext.Provider value={value}>
