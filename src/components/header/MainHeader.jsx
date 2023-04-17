@@ -36,7 +36,7 @@ function MainHeader() {
     if (key === 'Enter') setQuery(searchInput);
   };
 
-  const handleRedirect = () => navigate('/login');
+  const handleRedirect = () => navigate('/register');
 
   const handleClickLogout = async () => {
     const recoverToken = localStorage.getItem('token');

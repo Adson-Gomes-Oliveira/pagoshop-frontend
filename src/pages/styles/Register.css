@@ -1,0 +1,146 @@
+.register {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.register .arrow-back {
+  color: white;
+  margin: 1rem 0 0 1rem;
+  align-self: flex-start;
+}
+
+.register .register-header {
+  color: white;
+}
+
+.register .register-header h2 {
+  font-size: 3rem;
+  font-weight: 400;
+}
+
+.register .register-header div {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.register .register-header div span {
+  font-size: 1.1rem;
+}
+
+.register .register-header div a {
+  color: #FF3D24;
+  font-size: 1.1rem;
+  margin-left: 0.5rem;
+}
+
+.register .register-body .password-field .password-help {
+  font-size: 0.8rem;
+}
+
+.register .register-body .password-field div {
+  border-bottom: 0.1rem solid rgb(199, 199, 199);
+}
+
+.register .register-body .password-field .password-field-input {
+  width: 95%;
+  border-bottom: none;
+  margin: 0;
+  padding: 0.1rem 0 0.1rem 0;
+}
+
+.register .register-body .password-field .password-field-input:hover {
+  border-bottom: none;
+}
+
+.register .register-body .password-field .password-field-input:focus {
+  border-bottom: none;
+}
+
+.register .register-body .password-field div button {
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  width: fit-content;
+}
+
+.register .register-body .password-field div button span {
+  font-size: 1.1rem;
+  border-bottom: none;
+}
+
+.register .register-body {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  width: 40%;
+}
+
+.register .register-body label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+.register .register-body label span {
+  color: rgb(199, 199, 199);
+  font-size: 1.1rem;
+}
+
+.register .register-body label input {
+  background-color: transparent;
+  border-bottom: 0.1rem solid rgb(199, 199, 199);
+  color: white;
+  font-size: 1.1rem;
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+.register .register-body label input:hover {
+  border-bottom: 0.1rem solid rgb(255, 255, 255); 
+}
+
+.register .register-body label input:focus {
+  outline: none;
+  border-bottom: 0.1rem solid #FF3D24;
+}
+
+.register .register-body .address-label {
+  color: white;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.register .register-body label select {
+  background-color: transparent;
+  border-bottom: 0.1rem solid rgb(199, 199, 199);
+  color: white;
+  font-size: 1.1rem;
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+.register .register-body label select:focus {
+  outline: none;
+}
+
+.register .register-body label select option {
+  color: black;
+}
+
+.register button {
+  width: 40%;
+  background-color: #FF3D24;
+  padding: 1rem 0 1rem 0;
+  margin: 1rem 0 4rem 0;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.register button:disabled {
+  background-color: #afafaf;
+}
+
+.register .error-msg {
+  color: #0b80ec;
+  margin: 1rem 0 1rem 0;
+}

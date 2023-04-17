@@ -13,6 +13,7 @@ const categories = {
 
 const accounts = {
   getOne: account.getUserData,
+  post: account.postUser,
 };
 
 const products = {

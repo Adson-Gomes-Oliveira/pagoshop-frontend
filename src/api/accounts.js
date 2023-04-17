@@ -12,8 +12,20 @@ const getUserData = async ({ id, token }) => {
   return account;
 };
 
+const postUser = async (payload) => {
+  const requestStringOne = `http://${process.env.REACT_APP_GATEWAY_HOST || '127.0.0.1'}`;
+  const requestStringTwo = `:${process.env.REACT_APP_GATEWAY_PORT}/${process.env.REACT_APP_ACCOUNT_BASEURL}/`;
+  const requestString = requestStringOne + requestStringTwo;
+
+  const response = await axios.post(requestString, payload);
+
+  const postStatus = response.status;
+  return postStatus;
+};
+
 const allMethods = {
   getUserData,
+  postUser,
 };
 
 export default allMethods;
