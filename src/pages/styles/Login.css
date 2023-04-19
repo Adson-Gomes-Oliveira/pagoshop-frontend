@@ -1,88 +1,111 @@
 .login-section {
+  background-color: black;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   height: 100vh;
 }
 
-.modal-login {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1rem 0 2rem 0;
-  width: 30%;
-  box-shadow: 24px 17px 34px -7px rgba(145,145,145,1);
-}
-
-.modal-login img {
+.login-section .arrow-back {
+  color: white;
+  margin: 1rem 0 0 1rem;
   align-self: flex-start;
-  margin-left: 1rem
 }
 
-.modal-login span:first-of-type {
-  margin: 2.5rem 0 3rem 0;
-  width: 70%;
+.login-section .login-header {
+  color: white;
+  margin-top: 5rem;
+}
+
+.login-section .login-header h2 {
+  font-size: 3rem;
   text-align: center;
-  font-family: 'K2D';
+  font-weight: 400;
 }
 
-.modal-login form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-
-.modal-login form label {
-  margin-bottom: 1rem;
-  width: 70%;
-}
-
-.modal-login form label span {
-  font-family: 'K2D';
-  font-weight: 700;
-}
-
-.modal-login form label input {
-  height: 2.5rem;
-  width: 100%;
-  border-radius: 0.5rem;
-  padding-left: 0.5rem;
-  margin-top: 0.5rem;
-  border: 0.1rem solid rgb(167, 167, 167);
-}
-
-.modal-login form label input::placeholder {
-  color: rgb(192, 191, 191);
-}
-
-.modal-login .login-error-message {
-  color:red
-}
-
-.modal-login .login-buttons {
-  width: 50%;
-  display: flex;
-  justify-content: space-evenly;
+.login-section .login-header div {
+  text-align: center;
   margin-top: 1rem;
 }
 
-.modal-login .login-buttons button {
-  cursor: pointer;
-  padding: 1rem 0 1rem 0;
-  width: 40%;
-  font-family: 'K2D';
-  font-weight: 700;
+.login-section .login-header div span {
+  font-size: 1.1rem;
 }
 
-.modal-login .login-buttons button:first-of-type {
-  background-color: white;
-  border: 0.15rem solid var(--green-theme-base);
-  color: var(--green-theme-base);
+.login-section .login-header div a {
+  color: #FF3D24;
+  font-size: 1.1rem;
+  margin-left: 0.5rem;
 }
 
-.modal-login .login-buttons button:last-of-type {
-  background-color: var(--green-theme-base);
+.login-section .login-body .password-field .password-help {
+  font-size: 0.8rem;
+}
+
+.login-section .login-body .password-field div {
+  border-bottom: 0.1rem solid rgb(199, 199, 199);
+}
+
+.login-section .login-body .password-field .password-field-input {
+  width: 95%;
+  border-bottom: none;
+  margin: 0;
+  padding: 0.1rem 0 0.1rem 0;
+}
+
+.login-section .login-body .password-field .password-field-input:hover {
+  border-bottom: none;
+}
+
+.login-section .login-body .password-field .password-field-input:focus {
+  border-bottom: none;
+}
+
+.login-section .login-body {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  width: 30%;
+}
+
+.login-section .login-body label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+.login-section .login-body label span {
+  color: rgb(199, 199, 199);
+  font-size: 1.1rem;
+}
+
+.login-section .login-body label input {
+  background-color: transparent;
+  border-bottom: 0.1rem solid rgb(199, 199, 199);
   color: white;
+  font-size: 1.1rem;
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+.login-section .login-body label input:hover {
+  border-bottom: 0.1rem solid rgb(255, 255, 255); 
+}
+
+.login-section .login-body label input:focus {
+  outline: none;
+  border-bottom: 0.1rem solid #FF3D24;
+}
+
+.login-section button {
+  width: 30%;
+  background-color: #FF3D24;
+  padding: 1rem 0 1rem 0;
+  margin: 2rem 0 4rem 0;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.login-section .error-msg {
+  color: #0b80ec;
+  margin: 1rem 0 1rem 0;
 }

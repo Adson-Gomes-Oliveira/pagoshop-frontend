@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import brazilStates from '../helpers/brazilStates';
-import './styles/Register.css';
 import requester from '../helpers/requester';
+import './styles/Register.css';
 
 function Register() {
   const [passwordVisible, setPasswordVisible] = useState('password');
   const [showError, setShowError] = useState(true);
   const [registerButtonDisable, setRegisterButtonDisable] = useState(true);
+  const navigate = useNavigate();
   const [registerInputs, setRegisterInputs] = useState({
     email: '',
     password: '',
-    username: '',
+    name: '',
     cpf: '',
     phone: '',
     street: '',
@@ -44,11 +46,30 @@ function Register() {
   };
 
   const handleRegisterClick = async () => {
-    const createAccount = requester('account', 'post', registerInputs);
+    const registerInputsToPayload = {
+      name: registerInputs.name,
+      email: registerInputs.email,
+      password: registerInputs.password,
+      cpf: registerInputs.cpf,
+      phone: registerInputs.phone,
+      address: {
+        street: registerInputs.street,
+        number: registerInputs.number,
+        cep: registerInputs.cep,
+        moreInfo: registerInputs.moreInfo,
+        city: registerInputs.city,
+        state: registerInputs.state,
+      },
+    };
+
+    const createAccount = await requester('accounts', 'post', registerInputsToPayload);
+
     if (createAccount !== 201) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
-      setShowError(true);
+      return setShowError(true);
     }
+
+    return navigate('/login');
   };
 
   const handleShowPasswordClick = () => {
@@ -98,13 +119,13 @@ function Register() {
             </button>
           </div>
         </label>
-        <label htmlFor="username">
+        <label htmlFor="name">
           <span>Digite seu Nome</span>
           <input
-            id="username"
+            id="name"
             type="text"
             onChange={handleRegisterInputChange}
-            value={registerInputs.username}
+            value={registerInputs.name}
           />
         </label>
         <label htmlFor="cpf">
