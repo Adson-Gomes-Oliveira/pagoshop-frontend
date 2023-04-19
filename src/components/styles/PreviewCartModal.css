@@ -45,6 +45,7 @@
 .preview-card-modal .modal-products {
   margin: 1rem 2.5rem 0 2.5rem;
   height: 20rem;
+  overflow-x: hidden;
 }
 
 .preview-card-modal .modal-products::-webkit-scrollbar {
@@ -122,4 +123,5 @@
   cursor: pointer;
   border: 0.1rem solid #FF3D24;
   transition: 0.3s ease;
+  overflow: hidden;
 }

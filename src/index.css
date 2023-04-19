@@ -2,6 +2,7 @@
   scroll-behavior: smooth;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
   border-color: transparent;
   list-style: none;
   --green-theme-base: #025814;
