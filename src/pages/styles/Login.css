@@ -6,10 +6,19 @@
   height: 100vh;
 }
 
-.login-section .arrow-back {
-  color: white;
-  margin: 1rem 0 0 1rem;
+.login-section .login-back-button {
+  background: transparent;
+  width: fit-content;
+  height: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   align-self: flex-start;
+  margin: 1rem 0 0 1rem;
+}
+
+.login-section .login-back-button .arrow-back {
+  color: white;
 }
 
 .login-section .login-header {

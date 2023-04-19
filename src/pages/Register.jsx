@@ -77,9 +77,17 @@ function Register() {
     if (passwordVisible === 'text') setPasswordVisible('password');
   };
 
+  const handleClickToGoBack = () => navigate('/');
+
   return (
     <section className="register">
-      <span className="material-icons-outlined arrow-back">arrow_back_ios</span>
+      <button
+        type="button"
+        onClick={handleClickToGoBack}
+        className="register-back-button"
+      >
+        <span className="material-icons-outlined arrow-back">arrow_back_ios</span>
+      </button>
       <div className="register-header">
         <h2>Registre-se</h2>
         <div>

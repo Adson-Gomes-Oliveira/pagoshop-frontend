@@ -41,14 +41,22 @@ function Login() {
     navigate('/');
   };
 
+  const handleClickToGoBack = () => navigate('/');
+
   return (
     <section className="login-section">
-      <span className="material-icons-outlined arrow-back">arrow_back_ios</span>
+      <button
+        type="button"
+        onClick={handleClickToGoBack}
+        className="login-back-button"
+      >
+        <span className="material-icons-outlined arrow-back">arrow_back_ios</span>
+      </button>
       <div className="login-header">
         <h2>Login</h2>
         <div>
           <span>Novo neste site?</span>
-          <a href="/login">Registre-se</a>
+          <a href="/register">Registre-se</a>
         </div>
       </div>
       {showError && <span className="error-msg">* Algo deu errado, verifique as informações abaixo !</span>}
