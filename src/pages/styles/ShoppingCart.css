@@ -1,40 +1,88 @@
 .shopping-cart-section {
   display: flex;
   flex-direction: column;
+  background: rgb(120,0,0);
+  background: linear-gradient(220deg, rgba(120,0,0,1) 0%, rgba(36,2,2,1) 40%, rgba(0,0,0,1) 100%);
+  padding-bottom: 4rem;
 }
 
-.shopping-cart-section .back-home {
-  margin: 1rem 0 1rem 1rem;
-  color: var(--green-theme-base);
-  cursor: pointer;
-}
-
-.shopping-cart-section h1 {
-  background-color: var(--green-theme-darken);
-  font-family: 'K2D';
-  width: 100%;
-  align-self: center;
-  color: white;
-  padding: 1rem 0 1rem 0;
-  text-align: center;
-}
-
-.shopping-cart-section .cart-list {
+.shopping-cart-section .shoping-cart-body {
   display: flex;
-  flex-direction: column;
-  margin: 1rem 0 4rem 2rem;
+}
+
+.shopping-cart-section .shoping-cart-body .cart-products {
+  width: 55%;
+  margin: 3rem 1rem 0 3rem;
+}
+
+.shopping-cart-section .shoping-cart-body .cart-products h2 {
+  color: white;
+  font-weight: 400;
+  margin-bottom: 1rem;
 }
 
 .shopping-cart-section .final-price {
-  margin-left: 2rem
+  width: 30%;
+  margin: 3rem 1rem 0 3rem;
 }
 
-.shopping-cart-section button {
-  width: 30%;
-  padding: 1rem 0 1rem;
-  background-color: var(--green-theme-base);
+.shopping-cart-section .final-price h2 {
   color: white;
-  font-weight: 700;
-  align-self: flex-end;
-  margin-right: 1rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.shopping-cart-section .final-price .subtotal-price {
+  border-top: 0.1rem solid rgb(145, 145, 145);
+  padding: 1rem 0 0 0;
+  color: white;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+}
+
+.shopping-cart-section .final-price .delivery-price {
+  margin-top: 0.5rem;
+  border-bottom: 0.1rem solid rgb(145, 145, 145);
+  padding: 0 0 1rem 0;
+}
+
+.shopping-cart-section .final-price .delivery-price button {
+  color: white;
+  font-weight: 500;
+  text-decoration: underline;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.shopping-cart-section .final-price .total-price {
+  color: white;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  font-size: 1.3rem;
+}
+
+.shopping-cart-section .final-price .checkout-price {
+  display: flex;
+  flex-direction: column;
+}
+
+.shopping-cart-section .final-price .checkout-price button {
+  background-color: #FF3D24;
+  padding: 0.7rem 0 0.7rem 0;
+  margin: 2.5rem 0 1rem 0;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.shopping-cart-section .final-price .checkout-price .checkout-disclaimer {
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 38%;
+  color: white;
+  margin-top: 1rem;
 }

@@ -96,6 +96,7 @@
   color: white;
   font-weight: 600;
   font-size: 1rem;
+  cursor: pointer;
 }
 
 .preview-card-modal .modal-products .modal-products-item .item-infos .info-quantity-control span {

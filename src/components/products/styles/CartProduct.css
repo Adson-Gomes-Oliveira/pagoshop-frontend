@@ -1,32 +1,71 @@
 .cart-product {
-  border: 0.1rem solid rgb(167, 167, 167);
   display: flex;
-  width: 70%;
-  height: 7rem;
-  margin-top: 1rem;
+  border-top: 0.1rem solid rgb(145, 145, 145);
+  padding: 1rem 0 1rem 0;
 }
 
 .cart-product .product-general-info {
   display: flex;
-  align-items: center;
   padding: 1rem 1rem 1rem 0;
+  color: white;
+  justify-content: space-between;
+  width: 100%;
 }
 
-.cart-product img {
-  width: 6%;
+.cart-product .product-general-info .info-body {
+  display: flex;
+}
+
+.cart-product .product-general-info .info-body img {
+  width: 20%;
   margin-right: 2rem;
 }
 
-.cart-product .product-info {
+.cart-product .product-general-info .info-body .product-info {
   display: flex;
   flex-direction: column;
+  width: fit-content;
 }
 
-.cart-product .button-delete {
-  background-color: rgb(187, 2, 2);
-  position: relative;
-  height: 100%;
+.cart-product .product-general-info .info-body .product-info span {
+  margin: 0.3rem 0 0.3rem;
+}
+
+.cart-product .product-general-info .info-quantity-control {
+  display: flex;
+  align-self: self-start;
+  align-items: center;
+  width: 50%;
+}
+
+.cart-product .product-general-info .info-quantity-control .control-buttons {
+  border: 0.1rem solid white;
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0.3rem 0 0.3rem 0;
+  margin-right: 0.5rem;
+}
+
+.cart-product .product-general-info .info-quantity-control .control-buttons button {
+  background-color: transparent;
   color: white;
-  width: 5%;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  border: 0;
+}
+
+.cart-product .product-general-info .info-quantity-control .control-buttons span {
+  font-size: 0.85rem;
+}
+
+.cart-product .product-general-info .info-quantity-control .button-delete {
+  background: transparent;
+  font-size: 1.2rem;
+  font-weight: 100;
+  width: 15%;
+  color: white;
   cursor: pointer;
 }
