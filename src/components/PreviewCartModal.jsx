@@ -9,10 +9,29 @@ function PreviewCartModal() {
     showPreviewCartModel,
     setShowPreviewCartModel,
     cart,
+    setCart,
     totalPrice,
   } = useContext(PagoShopContext);
 
   const handlePreviewCartCloseClick = () => setShowPreviewCartModel(false);
+
+  const handleAddOrSubtractItem = (event, productId) => {
+    const { id } = event.target;
+
+    if (id === 'subtract-item') {
+      const newCart = cart;
+      const actualProduct = newCart.findIndex((prod) => prod.id === productId);
+      newCart[actualProduct].quantity -= 1;
+      setCart([...newCart]);
+    }
+
+    if (id === 'add-item') {
+      const newCart = cart;
+      const actualProduct = newCart.findIndex((prod) => prod.id === productId);
+      newCart[actualProduct].quantity += 1;
+      setCart([...newCart]);
+    }
+  };
 
   if (showPreviewCartModel) {
     return (
@@ -43,9 +62,21 @@ function PreviewCartModal() {
                     <span>{name}</span>
                     <span className="item-price">{`R$ ${formatNumberToPrice(price)}`}</span>
                     <div className="info-quantity-control">
-                      <button type="button">-</button>
+                      <button
+                        type="button"
+                        id="subtract-item"
+                        onClick={(e) => handleAddOrSubtractItem(e, prod.id)}
+                      >
+                        -
+                      </button>
                       <span>{quantity}</span>
-                      <button type="button">+</button>
+                      <button
+                        type="button"
+                        id="add-item"
+                        onClick={(e) => handleAddOrSubtractItem(e, prod.id)}
+                      >
+                        +
+                      </button>
                     </div>
                   </div>
                 </div>

@@ -36,6 +36,14 @@ function PagoShopProvider({ children }) {
   }, []);
 
   useEffect(() => {
+    const newCart = cart;
+    const someItemZero = newCart.some((prod) => prod.quantity === 0);
+    const cartWithoutZero = newCart.filter((prod) => prod.quantity !== 0);
+
+    if (someItemZero) {
+      setCart([...cartWithoutZero]);
+    }
+
     localStorage.setItem('shopping-cart', JSON.stringify(cart));
   }, [cart]);
 
