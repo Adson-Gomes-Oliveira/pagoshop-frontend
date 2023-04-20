@@ -24,13 +24,13 @@ const createOrder = async ({ orderInfos, token }) => {
   return order;
 };
 
-const confirmOrder = async ({ paymentInfos, id, token }) => {
+const confirmOrder = async ({ id, payloadToConfirmOrder, token }) => {
   const requestStringOne = `http://${process.env.REACT_APP_GATEWAY_HOST || '127.0.0.1'}`;
   const requestStringTwo = `:${process.env.REACT_APP_GATEWAY_PORT}/${process.env.REACT_APP_ORDER_BASEURL}`;
   const requestStringThree = `/confirm/${id}`;
   const requestString = requestStringOne + requestStringTwo + requestStringThree;
 
-  const response = await axios.post(requestString, paymentInfos, {
+  const response = await axios.post(requestString, payloadToConfirmOrder, {
     headers: { Authorization: token },
   });
   const invoice = response.data;

@@ -77,6 +77,14 @@
   cursor: pointer;
 }
 
+.shopping-cart-section .final-price .checkout-price button:hover {
+  background-color: #ca2914;
+}
+
+.shopping-cart-section .final-price .checkout-price button:active {
+  background-color: #7e180b;
+}
+
 .shopping-cart-section .final-price .checkout-price .checkout-disclaimer {
   align-self: center;
   display: flex;

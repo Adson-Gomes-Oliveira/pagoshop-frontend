@@ -6,14 +6,14 @@ import './styles/PreviewCartModal.css';
 
 function PreviewCartModal() {
   const {
-    showPreviewCartModel,
-    setShowPreviewCartModel,
+    showPreviewCartModal,
+    setShowPreviewCartModal,
     cart,
     setCart,
     totalPrice,
   } = useContext(PagoShopContext);
 
-  const handlePreviewCartCloseClick = () => setShowPreviewCartModel(false);
+  const handlePreviewCartCloseClick = () => setShowPreviewCartModal(false);
 
   const handleAddOrSubtractItem = (event, productId) => {
     const { id } = event.target;
@@ -33,7 +33,7 @@ function PreviewCartModal() {
     }
   };
 
-  if (showPreviewCartModel) {
+  if (showPreviewCartModal) {
     return (
       <section className="preview-card-modal">
         <div className="modal-header">

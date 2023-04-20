@@ -8,9 +8,10 @@ function PagoShopProvider({ children }) {
   const [query, setQuery] = useState('');
   const [categories, setCategories] = useState();
   const [filterCategory, setFilterCategory] = useState('');
-  const [orderId, setOrderId] = useState('');
+  const [orderId, setOrderId] = useState(0);
   const [cart, setCart] = useState([]);
-  const [showPreviewCartModel, setShowPreviewCartModel] = useState(false);
+  const [showPreviewCartModal, setShowPreviewCartModal] = useState(false);
+  const [showCheckoutModal, setShowCheckoutModal] = useState(true);
 
   const requestProducts = async () => {
     const productsResponse = await requester('products', 'get');
@@ -68,9 +69,19 @@ function PagoShopProvider({ children }) {
     setOrderId,
     categories,
     setCategories,
-    showPreviewCartModel,
-    setShowPreviewCartModel,
-  }), [cart, query, filterCategory, orderId, categories, showPreviewCartModel]);
+    showPreviewCartModal,
+    setShowPreviewCartModal,
+    showCheckoutModal,
+    setShowCheckoutModal,
+  }), [
+    cart,
+    query,
+    filterCategory,
+    orderId,
+    categories,
+    showPreviewCartModal,
+    showCheckoutModal,
+  ]);
 
   return (
     <PagoShopContext.Provider value={value}>

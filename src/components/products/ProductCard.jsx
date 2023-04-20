@@ -9,7 +9,7 @@ import './styles/ProductCard.css';
 const NO_IMG_URL = 'https://thumbs.dreamstime.com/b/no-thumbnail-image-placeholder-forums-blogs-websites-148010362.jpg';
 
 function ProductCard({ products }) {
-  const { setShowPreviewCartModel, cart, setCart } = useContext(PagoShopContext);
+  const { setShowPreviewCartModal, cart, setCart } = useContext(PagoShopContext);
 
   const increaseProductQuantityInCart = (productInCart) => {
     const productIndex = cart.findIndex((prod) => prod.name === productInCart.name);
@@ -36,7 +36,7 @@ function ProductCard({ products }) {
     if (productInCart) increaseProductQuantityInCart(productInCart);
     if (!productInCart) addProductToCart(product);
 
-    setShowPreviewCartModel(true);
+    setShowPreviewCartModal(true);
   };
 
   const cards = products && products.map((product) => {
