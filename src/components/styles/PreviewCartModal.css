@@ -63,7 +63,7 @@
 }
 
 .preview-card-modal .modal-products .modal-products-item img {
-  width: 55%;
+  min-width: 30%;
   height: 6rem;
 }
 

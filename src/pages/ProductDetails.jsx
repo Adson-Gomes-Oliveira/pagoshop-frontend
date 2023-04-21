@@ -89,7 +89,7 @@ function ProductDetails() {
               <span>{product.slug}</span>
             </div>
             <div className="product-buy">
-              <span>{`R$ ${formatNumberToPrice(product.unit_price)}`}</span>
+              <span>{`${formatNumberToPrice.format(product.unit_price)}`}</span>
               <span>Pode dividir em até 12X sem juros !</span>
               <span>Aceitamos todos os cartões.</span>
               <span>Frete grátis todo Brasil *</span>

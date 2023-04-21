@@ -13,13 +13,14 @@
   height: 18rem;
   background-color: rgba(151, 151, 151, 0.5);
   background-blend-mode: darken;
-  background-size: 140%;
+  background-size: 120%;
+  background-position: center;
   transition: 0.3s ease;
   cursor: pointer;
 }
 
 .product-card:hover .card-thumbnail {
-  background-size: 170%;
+  background-size: 150%;
 }
 
 .product-card .card-info {

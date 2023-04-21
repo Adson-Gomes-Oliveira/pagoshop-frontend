@@ -60,7 +60,7 @@ function PreviewCartModal() {
                   <img src={thumbnail} alt={name} />
                   <div className="item-infos">
                     <span>{name}</span>
-                    <span className="item-price">{`R$ ${formatNumberToPrice(price)}`}</span>
+                    <span className="item-price">{formatNumberToPrice.format(price)}</span>
                     <div className="info-quantity-control">
                       <button
                         type="button"

@@ -49,7 +49,7 @@ function ProductCard({ products }) {
         </div>
         <div className="card-info">
           <span>{name}</span>
-          <span>{`R$ ${formatNumberToPrice(unitPrice)}`}</span>
+          <span>{`${formatNumberToPrice.format(unitPrice)}`}</span>
           <button
             type="button"
             onClick={() => handleAddToCartClick(product)}

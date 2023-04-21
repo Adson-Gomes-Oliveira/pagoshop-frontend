@@ -1,8 +1,6 @@
-const formatNumberToPrice = (number) => {
-  const numberToDigit = number.toFixed(2);
-  const turningIntoString = numberToDigit.toString();
-  const numberFormatedToPrice = turningIntoString.replace('.', ',');
-  return numberFormatedToPrice;
-};
+const formatNumberToPrice = new Intl.NumberFormat('pt-BR', {
+  style: 'currency',
+  currency: 'BRL',
+});
 
 export default formatNumberToPrice;

@@ -11,7 +11,7 @@ function PagoShopProvider({ children }) {
   const [orderId, setOrderId] = useState(0);
   const [cart, setCart] = useState([]);
   const [showPreviewCartModal, setShowPreviewCartModal] = useState(false);
-  const [showCheckoutModal, setShowCheckoutModal] = useState(true);
+  const [showCheckoutModal, setShowCheckoutModal] = useState(false);
 
   const requestProducts = async () => {
     const productsResponse = await requester('products', 'get');
@@ -51,7 +51,7 @@ function PagoShopProvider({ children }) {
   const totalPrice = () => {
     const pricesInCart = cart.map((prod) => prod.price * prod.quantity);
     const totalPriceInCart = pricesInCart.reduce((prev, crr) => prev + crr, 0);
-    const priceFormated = formatNumberToPrice(totalPriceInCart);
+    const priceFormated = formatNumberToPrice.format(totalPriceInCart);
 
     return priceFormated;
   };

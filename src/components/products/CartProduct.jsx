@@ -69,7 +69,7 @@ function CartProduct({ info }) {
               +
             </button>
           </div>
-          <span>{`R$ ${formatNumberToPrice(quantity * price)}`}</span>
+          <span>{formatNumberToPrice.format(quantity * price)}</span>
           <button
             className="button-delete"
             type="button"

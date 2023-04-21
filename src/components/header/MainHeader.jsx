@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import MainNav from './MainNav';
 import TrooperLogo from '../../assets/svg/trooper-logo.svg';
 import PagoShopContext from '../../context/PagoShopContext';
-import requester from '../../helpers/requester';
+// import requester from '../../helpers/requester';
 import './styles/MainHeader.css';
 
 function MainHeader() {
@@ -38,20 +38,20 @@ function MainHeader() {
 
   const handleRedirect = () => navigate('/register');
 
-  const handleClickLogout = async () => {
-    const recoverToken = localStorage.getItem('token');
-    const response = await requester('authorization', 'logout', recoverToken);
+  // const handleClickLogout = async () => {
+  //   const recoverToken = localStorage.getItem('token');
+  //   const response = await requester('authorization', 'logout', recoverToken);
 
-    if (response.data === 'jwt expired') {
-      localStorage.clear();
-      navigate(0);
-    }
+  //   if (response.data === 'jwt expired') {
+  //     localStorage.clear();
+  //     navigate(0);
+  //   }
 
-    if (response.status === 204) {
-      localStorage.clear();
-      navigate(0);
-    }
-  };
+  //   if (response.status === 204) {
+  //     localStorage.clear();
+  //     navigate(0);
+  //   }
+  // };
 
   const handleClickCart = async () => navigate('/shopping-cart');
 
@@ -86,15 +86,9 @@ function MainHeader() {
               <span className="material-icons-outlined">account_circle</span>
             </div>
           ) : (
-            <div className="logout">
-              <span>{username}</span>
-              <button
-                type="button"
-                onClick={handleClickLogout}
-              >
-                <span>Sair</span>
-                <span className="material-icons-outlined">logout</span>
-              </button>
+            <div className="profile">
+              <span className="material-icons-outlined">account_circle</span>
+              <span>Meu Perfil</span>
             </div>
           )}
 

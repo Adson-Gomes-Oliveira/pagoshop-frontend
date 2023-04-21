@@ -14,3 +14,7 @@
   display: flex;
   margin: 10rem 0 5rem 2.8rem;
 }
+
+.products-by-category .products .product-card .card-thumbnail {
+  background-color: rgba(151, 151, 151, 0);
+}

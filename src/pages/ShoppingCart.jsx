@@ -67,7 +67,7 @@ function ShoppingCart() {
 
   return (
     <>
-      {showCheckoutModal && <CheckoutModal buyValue={totalPrice} />}
+      {showCheckoutModal && <CheckoutModal buyValue={formatNumberToPrice.format(totalPrice)} />}
       <section className="shopping-cart-section">
         <MainHeader />
         <div className="shoping-cart-body">
@@ -83,7 +83,7 @@ function ShoppingCart() {
             <h2>Resumo do Pedido</h2>
             <div className="subtotal-price">
               <span>Subtotal</span>
-              <span>{cart.length > 0 ? `R$ ${formatNumberToPrice(totalPrice)}` : 'R$ 0,00'}</span>
+              <span>{cart.length > 0 ? `${formatNumberToPrice.format(totalPrice)}` : '0,00'}</span>
             </div>
             <div className="delivery-price">
               <button type="button">
@@ -92,7 +92,7 @@ function ShoppingCart() {
             </div>
             <div className="total-price">
               <span>Total</span>
-              <span>{cart.length > 0 ? `R$ ${formatNumberToPrice(totalPrice)}` : 'R$ 0,00'}</span>
+              <span>{cart.length > 0 ? `${formatNumberToPrice.format(totalPrice)}` : 'R$ 0,00'}</span>
             </div>
             <div className="checkout-price">
               <button
