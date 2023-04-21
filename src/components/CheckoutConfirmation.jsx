@@ -5,13 +5,13 @@ import PagoShopContext from '../context/PagoShopContext';
 import './styles/CheckoutConfirmation.css';
 
 function CheckoutConfirmation({ setShowCheckoutConfirmationModal }) {
-  const { setShowCheckoutModal } = useContext(PagoShopContext);
+  const { setShowCheckoutModal, setCart } = useContext(PagoShopContext);
   const navigate = useNavigate();
 
   const handleCloseBuyProcessClick = () => {
     setShowCheckoutModal(false);
     setShowCheckoutConfirmationModal(false);
-    localStorage.setItem('shopping-cart', JSON.stringify([]));
+    setCart([]);
     navigate('/');
   };
 

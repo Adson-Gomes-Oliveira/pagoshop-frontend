@@ -27,7 +27,10 @@ function CheckoutModal({ buyValue }) {
 
   const handleFinishBuyClick = async () => {
     const payloadToConfirmOrder = {
-      value: buyValue,
+      value: Number(buyValue
+        .replace('R$', '')
+        .replace('.', '')
+        .replace(',', '.')),
       buyerName: checkoutInputs.name,
       cardNumber: checkoutInputs.cardNumber,
       cvv: checkoutInputs.cvv,
