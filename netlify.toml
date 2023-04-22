@@ -1,0 +1,12 @@
+[build]
+  environment = {
+    REACT_APP_GATEWAY_HOST=trooper-gateway.onrender.com/
+    REACT_APP_ACCOUNT_BASEURL=api/accounts
+    REACT_APP_PRODUCT_BASEURL=api/products
+    REACT_APP_CATEGORY_BASEURL=api/categories
+    REACT_APP_LOGIN_BASEURL=api/auth/login
+    REACT_APP_LOGOUT_BASEURL=api/auth/logout
+    REACT_APP_ORDER_BASEURL=api/orders
+    REACT_APP_PAYMENT_BASEURL=api/payments
+    JWT_SECRET=MTk4OGExOTZkMWYyOWZjZjlmOTcwMWVjZWRjMzc1MzZkOGM0MmFjMjQ0NjcyZjIzZDQwOGU4YTQ1YWQ3NTRjZA==
+  }
