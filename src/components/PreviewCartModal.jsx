@@ -1,10 +1,12 @@
 import React, { useContext } from 'react';
 import { v4 as uuid } from 'uuid';
+import { useNavigate } from 'react-router-dom';
 import PagoShopContext from '../context/PagoShopContext';
 import formatNumberToPrice from '../helpers/formatNumber';
 import './styles/PreviewCartModal.css';
 
 function PreviewCartModal() {
+  const navigate = useNavigate();
   const {
     showPreviewCartModal,
     setShowPreviewCartModal,
@@ -31,6 +33,11 @@ function PreviewCartModal() {
       newCart[actualProduct].quantity += 1;
       setCart([...newCart]);
     }
+  };
+
+  const handleClickShoppingCart = () => {
+    setShowPreviewCartModal(false);
+    navigate('/shopping-cart');
   };
 
   if (showPreviewCartModal) {
@@ -90,7 +97,13 @@ function PreviewCartModal() {
           <span>{`R$ ${totalPrice()}`}</span>
         </div>
         <div className="divisor" />
-        <button className="cart-details-button" type="button">Ver carrinho</button>
+        <button
+          className="cart-details-button"
+          type="button"
+          onClick={handleClickShoppingCart}
+        >
+          Ver carrinho
+        </button>
       </section>
     );
   }

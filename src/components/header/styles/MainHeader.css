@@ -109,10 +109,38 @@
   font-weight: 600;
   max-width: 50%;
   margin: 0 1rem 0 1rem;
+  cursor: pointer;
 }
 
 .main-header .profile .material-icons-outlined {
   font-size: 2rem;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.main-header .profile-details {
+	display: flex;
+  flex-direction: column;
+  width: 10%;
+  background-color: black;
+  position: absolute;
+  top: 15%;
+  right: 6.5%;
+  animation: fadeIn 0.3s ease;
+}
+
+.main-header .profile-details button {
+  cursor: pointer;
+  background-color: transparent;
+  color: white;
+  padding: 0.5rem 0 0.5rem 0;
 }
 
 .main-header .shopping-cart button {
