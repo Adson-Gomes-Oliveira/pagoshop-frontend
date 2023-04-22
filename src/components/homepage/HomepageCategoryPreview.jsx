@@ -8,7 +8,7 @@ function HomepageCategoryPreview() {
 
   const requestAllCategories = async () => {
     const response = await requester('categories', 'get');
-    const slicingCategories = response.slice(0, 3);
+    const slicingCategories = response.slice(0, 4);
 
     setCategories(slicingCategories);
   };
