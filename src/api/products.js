@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const getAllProducts = async () => {
-  const requestStringOne = `http://${process.env.REACT_APP_GATEWAY_HOST || '127.0.0.1'}`;
+  const requestStringOne = `${process.env.REACT_APP_GATEWAY_HOST || '127.0.0.1'}`;
   const requestStringTwo = `/${process.env.REACT_APP_PRODUCT_BASEURL}`;
   const requestString = requestStringOne + requestStringTwo;
 
@@ -11,7 +11,7 @@ const getAllProducts = async () => {
 };
 
 const getOneProduct = async (id) => {
-  const requestStringOne = `http://${process.env.REACT_APP_GATEWAY_HOST || '127.0.0.1'}`;
+  const requestStringOne = `${process.env.REACT_APP_GATEWAY_HOST || '127.0.0.1'}`;
   const requestStringTwo = `/${process.env.REACT_APP_PRODUCT_BASEURL}/${id}`;
   const requestString = requestStringOne + requestStringTwo;
 

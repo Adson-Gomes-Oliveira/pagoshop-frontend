@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const getOneOrder = async ({ id, token }) => {
-  const requestStringOne = `http://${process.env.REACT_APP_GATEWAY_HOST || '127.0.0.1'}`;
+  const requestStringOne = `${process.env.REACT_APP_GATEWAY_HOST || '127.0.0.1'}`;
   const requestStringTwo = `/${process.env.REACT_APP_ORDER_BASEURL}/${id}`;
   const requestString = requestStringOne + requestStringTwo;
 
@@ -13,7 +13,7 @@ const getOneOrder = async ({ id, token }) => {
 };
 
 const createOrder = async ({ orderInfos, token }) => {
-  const requestStringOne = `http://${process.env.REACT_APP_GATEWAY_HOST || '127.0.0.1'}`;
+  const requestStringOne = `${process.env.REACT_APP_GATEWAY_HOST || '127.0.0.1'}`;
   const requestStringTwo = `/${process.env.REACT_APP_ORDER_BASEURL}`;
   const requestString = requestStringOne + requestStringTwo;
 
@@ -25,7 +25,7 @@ const createOrder = async ({ orderInfos, token }) => {
 };
 
 const confirmOrder = async ({ id, payloadToConfirmOrder, token }) => {
-  const requestStringOne = `http://${process.env.REACT_APP_GATEWAY_HOST || '127.0.0.1'}`;
+  const requestStringOne = `${process.env.REACT_APP_GATEWAY_HOST || '127.0.0.1'}`;
   const requestStringTwo = `/${process.env.REACT_APP_ORDER_BASEURL}`;
   const requestStringThree = `/confirm/${id}`;
   const requestString = requestStringOne + requestStringTwo + requestStringThree;
