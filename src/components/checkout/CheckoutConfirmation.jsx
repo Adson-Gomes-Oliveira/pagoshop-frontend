@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import TrooperContext from '../context/TrooperContext';
+import TrooperContext from '../../context/TrooperContext';
 import './styles/CheckoutConfirmation.css';
 
 function CheckoutConfirmation({ setShowCheckoutConfirmationModal }) {

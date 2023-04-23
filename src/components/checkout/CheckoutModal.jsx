@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
-import TrooperContext from '../context/TrooperContext';
-import requester from '../helpers/requester';
+import TrooperContext from '../../context/TrooperContext';
+import requester from '../../helpers/requester';
 import CheckoutConfirmation from './CheckoutConfirmation';
 import './styles/CheckoutModal.css';
 
