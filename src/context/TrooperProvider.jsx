@@ -1,10 +1,10 @@
 import React, { useMemo, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import PagoShopContext from './PagoShopContext';
+import TrooperContext from './TrooperContext';
 import requester from '../helpers/requester';
 import formatNumberToPrice from '../helpers/formatNumber';
 
-function PagoShopProvider({ children }) {
+function TrooperProvider({ children }) {
   const [query, setQuery] = useState('');
   const [categories, setCategories] = useState();
   const [filterCategory, setFilterCategory] = useState('');
@@ -84,14 +84,14 @@ function PagoShopProvider({ children }) {
   ]);
 
   return (
-    <PagoShopContext.Provider value={value}>
+    <TrooperContext.Provider value={value}>
       {children}
-    </PagoShopContext.Provider>
+    </TrooperContext.Provider>
   );
 }
 
-PagoShopProvider.propTypes = {
+TrooperProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export default PagoShopProvider;
+export default TrooperProvider;
