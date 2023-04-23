@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { useParams } from 'react-router-dom';
-import PagoShopContext from '../context/PagoShopContext';
+import TrooperContext from '../context/TrooperContext';
 import MainHeader from '../components/header/MainHeader';
 import ProductFilters from '../components/products/ProductFilters';
 import ProductShowCase from '../components/products/ProductShowCase';
@@ -9,7 +9,7 @@ import Footer from '../components/Footer';
 import './styles/ProductsByCategory.css';
 
 function ProductsByCategory() {
-  const { requestProducts } = useContext(PagoShopContext);
+  const { requestProducts } = useContext(TrooperContext);
   const [products, setProducts] = useState([]);
   const [productsFiltered, setProductsFiltered] = useState([]);
 

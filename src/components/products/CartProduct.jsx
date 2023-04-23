@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 import { v4 as uuid } from 'uuid';
 import formatNumberToPrice from '../../helpers/formatNumber';
-import PagoShopContext from '../../context/PagoShopContext';
+import TrooperContext from '../../context/TrooperContext';
 import './styles/CartProduct.css';
 
 function CartProduct({ info }) {
@@ -15,7 +15,7 @@ function CartProduct({ info }) {
     price,
   } = info;
   const navigate = useNavigate();
-  const { cart, setCart } = useContext(PagoShopContext);
+  const { cart, setCart } = useContext(TrooperContext);
 
   const handleClickDelete = (id) => {
     const cartWithoutTheProduct = cart.filter((prod) => prod.id !== id);

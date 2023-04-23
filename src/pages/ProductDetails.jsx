@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import requester from '../helpers/requester';
 import MainHeader from '../components/header/MainHeader';
 import formatNumberToPrice from '../helpers/formatNumber';
-import PagoShopContext from '../context/PagoShopContext';
+import TrooperContext from '../context/TrooperContext';
 import ConfirmBuyModal from '../components/products/ConfirmBuyModal';
 import './styles/ProductDetails.css';
 
@@ -13,7 +13,7 @@ function ProductDetails() {
   const [productBuyQuantity, setProductQuantity] = useState(0);
   const [showConfirmModal, setShowConfirmModal] = useState(false);
   const navigate = useNavigate();
-  const { cart, setCart } = useContext(PagoShopContext);
+  const { cart, setCart } = useContext(TrooperContext);
 
   const requestProduct = async () => {
     const response = await requester('products', 'getOne', id);

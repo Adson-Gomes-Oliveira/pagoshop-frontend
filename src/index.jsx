@@ -3,18 +3,18 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import PagoShopProvider from './context/PagoShopProvider';
+import TrooperProvider from './context/TrooperProvider';
 import './index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <PagoShopProvider>
+  <TrooperProvider>
     <BrowserRouter>
       <React.StrictMode>
         <App />
       </React.StrictMode>
     </BrowserRouter>
-  </PagoShopProvider>,
+  </TrooperProvider>,
 );
 
 // If you want to start measuring performance in your app, pass a function

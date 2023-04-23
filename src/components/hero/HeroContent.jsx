@@ -1,13 +1,13 @@
 import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import PagoShopContext from '../../context/PagoShopContext';
+import TrooperContext from '../../context/TrooperContext';
 import FlashLogo from '../../assets/svg/flash-logo.svg';
 import GotLogo from '../../assets/svg/got-logo.svg';
 import KonohaLogo from '../../assets/svg/konoha-logo.svg';
 import './styles/HeroContent.css';
 
 function HeroContent() {
-  const { categories } = useContext(PagoShopContext);
+  const { categories } = useContext(TrooperContext);
   const navigate = useNavigate();
 
   const handleBuyClick = () => {
