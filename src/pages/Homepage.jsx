@@ -1,5 +1,4 @@
-import React from 'react';
-// import MainHeader from '../components/header/MainHeader';
+import React, { useContext } from 'react';
 import MainHero from '../components/hero/MainHero';
 import HomepageCategoryPreview from '../components/homepage/HomepageCategoryPreview';
 import HomepageInfoSeeMore from '../components/homepage/HomepageInfoSeeMore';
@@ -8,11 +7,14 @@ import HomepageAdBox from '../components/homepage/HomepageAdBox';
 import HomepageSupportedBy from '../components/homepage/HomepageSupportedBy';
 import Footer from '../components/Footer';
 import Loading from '../components/Loading';
+import TrooperContext from '../context/TrooperContext';
 
 function Homepage() {
+  const { loading } = useContext(TrooperContext);
+
   return (
     <>
-      <Loading />
+      {loading && <Loading />}
       <MainHero />
       <HomepageCategoryPreview />
       <HomepageInfoSeeMore />
