@@ -5,6 +5,15 @@ import logout from '../api/logout';
 import order from '../api/orders';
 import account from '../api/accounts';
 import payment from '../api/payments';
+import healthChecks from '../api/healthChecks';
+
+const health = {
+  gateway: healthChecks.checkGateway,
+  account: healthChecks.checkAccount,
+  product: healthChecks.checkProduct,
+  order: healthChecks.checkOrder,
+  payment: healthChecks.checkPayment,
+};
 
 const categories = {
   get: category.getAllCategories,
@@ -37,6 +46,7 @@ const orders = {
 };
 
 const endpoints = {
+  health,
   categories,
   products,
   authorization,

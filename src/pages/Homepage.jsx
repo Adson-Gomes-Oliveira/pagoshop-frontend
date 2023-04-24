@@ -7,10 +7,12 @@ import HomepageBestSeller from '../components/homepage/HomepageBestSeller';
 import HomepageAdBox from '../components/homepage/HomepageAdBox';
 import HomepageSupportedBy from '../components/homepage/HomepageSupportedBy';
 import Footer from '../components/Footer';
+import Loading from '../components/Loading';
 
 function Homepage() {
   return (
     <>
+      <Loading />
       <MainHero />
       <HomepageCategoryPreview />
       <HomepageInfoSeeMore />

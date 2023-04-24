@@ -7,7 +7,7 @@ import formatNumberToPrice from '../helpers/formatNumber';
 import requester from '../helpers/requester';
 import MainHeader from '../components/header/MainHeader';
 import './styles/ShoppingCart.css';
-import CheckoutModal from '../components/CheckoutModal';
+import CheckoutModal from '../components/checkout/CheckoutModal';
 
 function ShoppingCart() {
   const [totalPrice, setTotalPrice] = useState(0);
