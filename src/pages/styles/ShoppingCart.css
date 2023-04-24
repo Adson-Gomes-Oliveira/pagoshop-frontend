@@ -75,6 +75,9 @@
   margin: 2.5rem 0 1rem 0;
   font-size: 1.1rem;
   cursor: pointer;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }
 
 .shopping-cart-section .final-price .checkout-price button:hover {
