@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import PagoShopContext from '../context/PagoShopContext';
+import TrooperContext from '../../context/TrooperContext';
 import './styles/CheckoutConfirmation.css';
 
 function CheckoutConfirmation({ setShowCheckoutConfirmationModal }) {
-  const { setShowCheckoutModal, setCart } = useContext(PagoShopContext);
+  const { setShowCheckoutModal, setCart } = useContext(TrooperContext);
   const navigate = useNavigate();
 
   const handleCloseBuyProcessClick = () => {

@@ -4,10 +4,10 @@ import React, { useContext } from 'react';
 import { v4 as uuid } from 'uuid';
 import { useNavigate } from 'react-router-dom';
 import './styles/MainNav.css';
-import PagoShopContext from '../../context/PagoShopContext';
+import TrooperContext from '../../context/TrooperContext';
 
 function MainNav() {
-  const { categories } = useContext(PagoShopContext);
+  const { categories } = useContext(TrooperContext);
   const navigate = useNavigate();
 
   const handleClickCategory = (event) => {

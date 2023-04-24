@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { v4 as uuid } from 'uuid';
 import { useNavigate } from 'react-router-dom';
-import PagoShopContext from '../context/PagoShopContext';
+import TrooperContext from '../context/TrooperContext';
 import formatNumberToPrice from '../helpers/formatNumber';
 import './styles/PreviewCartModal.css';
 
@@ -13,7 +13,7 @@ function PreviewCartModal() {
     cart,
     setCart,
     totalPrice,
-  } = useContext(PagoShopContext);
+  } = useContext(TrooperContext);
 
   const handlePreviewCartCloseClick = () => setShowPreviewCartModal(false);
 

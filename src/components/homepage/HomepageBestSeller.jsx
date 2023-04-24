@@ -1,11 +1,11 @@
 import React, { useEffect, useState, useContext } from 'react';
-import PagoShopContext from '../../context/PagoShopContext';
+import TrooperContext from '../../context/TrooperContext';
 import ProductCard from '../products/ProductCard';
 import './styles/HomepageBestSeller.css';
 
 function HomepageBestSeller() {
   const [products, setProducts] = useState([]);
-  const { requestProducts } = useContext(PagoShopContext);
+  const { requestProducts } = useContext(TrooperContext);
 
   const fetchProducts = async () => {
     const getProducts = await requestProducts();

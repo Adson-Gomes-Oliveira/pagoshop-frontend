@@ -2,12 +2,12 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useContext, useEffect, useState } from 'react';
 import CartProduct from '../components/products/CartProduct';
-import PagoShopContext from '../context/PagoShopContext';
+import TrooperContext from '../context/TrooperContext';
 import formatNumberToPrice from '../helpers/formatNumber';
 import requester from '../helpers/requester';
 import MainHeader from '../components/header/MainHeader';
 import './styles/ShoppingCart.css';
-import CheckoutModal from '../components/CheckoutModal';
+import CheckoutModal from '../components/checkout/CheckoutModal';
 
 function ShoppingCart() {
   const [totalPrice, setTotalPrice] = useState(0);
@@ -16,7 +16,7 @@ function ShoppingCart() {
     setShowCheckoutModal,
     showCheckoutModal,
     setOrderId,
-  } = useContext(PagoShopContext);
+  } = useContext(TrooperContext);
 
   useEffect(() => {
     const prices = cart.map((product) => {

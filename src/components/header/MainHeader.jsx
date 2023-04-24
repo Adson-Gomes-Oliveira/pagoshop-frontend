@@ -4,7 +4,7 @@ import React, { useContext, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import MainNav from './MainNav';
 import TrooperLogo from '../../assets/svg/trooper-logo.svg';
-import PagoShopContext from '../../context/PagoShopContext';
+import TrooperContext from '../../context/TrooperContext';
 import requester from '../../helpers/requester';
 import './styles/MainHeader.css';
 
@@ -12,7 +12,7 @@ function MainHeader() {
   const [searchInput, setSearchInput] = useState('');
   const [username, setUsername] = useState(null);
   const [showProfileMenu, setShowProfileMenu] = useState('none');
-  const { setQuery, cart, setShowPreviewCartModal } = useContext(PagoShopContext);
+  const { setQuery, cart, setShowPreviewCartModal } = useContext(TrooperContext);
   const navigate = useNavigate();
 
   useEffect(() => {

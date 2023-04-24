@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
-import PagoShopContext from '../context/PagoShopContext';
-import requester from '../helpers/requester';
+import TrooperContext from '../../context/TrooperContext';
+import requester from '../../helpers/requester';
 import CheckoutConfirmation from './CheckoutConfirmation';
 import './styles/CheckoutModal.css';
 
@@ -14,7 +14,7 @@ function CheckoutModal({ buyValue }) {
     expirationYear: '',
   });
   const [showCheckoutConfirmation, setShowCheckoutConfirmation] = useState(false);
-  const { setShowCheckoutModal, orderId } = useContext(PagoShopContext);
+  const { setShowCheckoutModal, orderId } = useContext(TrooperContext);
 
   const handleCheckoutInputChange = (event) => {
     const { id, value } = event.target;

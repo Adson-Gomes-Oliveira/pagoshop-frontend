@@ -1,10 +1,12 @@
 import React, { useMemo, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import PagoShopContext from './PagoShopContext';
+import TrooperContext from './TrooperContext';
 import requester from '../helpers/requester';
 import formatNumberToPrice from '../helpers/formatNumber';
 
-function PagoShopProvider({ children }) {
+function TrooperProvider({ children }) {
+  const [loadLevel, setLoadLevel] = useState('0%');
+  const [loading, setLoading] = useState(true);
   const [query, setQuery] = useState('');
   const [categories, setCategories] = useState();
   const [filterCategory, setFilterCategory] = useState('');
@@ -24,6 +26,29 @@ function PagoShopProvider({ children }) {
 
     setCategories(firstCategories);
   };
+
+  const requestHealthChecks = async () => {
+    const responseGateway = await requester('health', 'gateway');
+    if (responseGateway === 'OK!') setLoadLevel('20%');
+
+    const responseAccount = await requester('health', 'account');
+    if (responseAccount === 'OK!') setLoadLevel('40%');
+
+    const responseProduct = await requester('health', 'product');
+    if (responseProduct === 'OK!') setLoadLevel('60%');
+
+    const responseOrder = await requester('health', 'order');
+    if (responseOrder === 'OK!') setLoadLevel('80%');
+
+    const responsePayment = await requester('health', 'payment');
+    if (responsePayment === 'OK!') setLoadLevel('100%');
+
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    requestHealthChecks();
+  }, []);
 
   useEffect(() => {
     requestCategories();
@@ -73,6 +98,10 @@ function PagoShopProvider({ children }) {
     setShowPreviewCartModal,
     showCheckoutModal,
     setShowCheckoutModal,
+    loadLevel,
+    setLoadLevel,
+    loading,
+    setLoading,
   }), [
     cart,
     query,
@@ -81,17 +110,19 @@ function PagoShopProvider({ children }) {
     categories,
     showPreviewCartModal,
     showCheckoutModal,
+    loadLevel,
+    loading,
   ]);
 
   return (
-    <PagoShopContext.Provider value={value}>
+    <TrooperContext.Provider value={value}>
       {children}
-    </PagoShopContext.Provider>
+    </TrooperContext.Provider>
   );
 }
 
-PagoShopProvider.propTypes = {
+TrooperProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export default PagoShopProvider;
+export default TrooperProvider;
