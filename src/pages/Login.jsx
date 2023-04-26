@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import requester from '../helpers/requester';
 import './styles/Login.css';
+import TrooperContext from '../context/TrooperContext';
+import Loading from '../components/Loading';
 
 function Login() {
   const [loginInputs, setLoginInput] = useState({
@@ -9,6 +11,7 @@ function Login() {
     password: '',
   });
   const [showError, setShowError] = useState(false);
+  const { loading, setLoading } = useContext(TrooperContext);
   const navigate = useNavigate();
 
   const handleChangeLogin = (event) => {
@@ -22,6 +25,8 @@ function Login() {
   };
 
   const handleClickLogin = async () => {
+    setLoading(true);
+
     const response = await requester('authorization', 'login', {
       email: loginInputs.email,
       password: loginInputs.password,
@@ -38,6 +43,7 @@ function Login() {
     localStorage.setItem('user', JSON.stringify(userData));
     localStorage.setItem('token', userToken);
 
+    setLoading(false);
     navigate('/');
   };
 
@@ -90,7 +96,7 @@ function Login() {
         type="button"
         onClick={handleClickLogin}
       >
-        Fazer login
+        {loading ? <Loading /> : 'Login'}
       </button>
     </section>
   );

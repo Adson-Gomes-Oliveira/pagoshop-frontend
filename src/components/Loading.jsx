@@ -1,10 +1,13 @@
 import React, { useContext, useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import TrooperContext from '../context/TrooperContext';
 import './styles/Loading.css';
+import BouncingBalls from './BouncingBalls';
 
 function Loading() {
   const [phraseShow, setPhraseShow] = useState(0);
   const { loadLevel } = useContext(TrooperContext);
+  const location = useLocation();
 
   useEffect(() => {
     setPhraseShow(Math.floor(Math.random() * 9));
@@ -21,6 +24,10 @@ function Loading() {
     'Correndo de Jedi',
     'Patrulhando sistema imperial',
   ];
+
+  if (location.pathname !== '/') {
+    return <BouncingBalls />;
+  }
 
   return (
     <section className="loading">

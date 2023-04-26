@@ -6,8 +6,9 @@ import TrooperContext from '../context/TrooperContext';
 import formatNumberToPrice from '../helpers/formatNumber';
 import requester from '../helpers/requester';
 import MainHeader from '../components/header/MainHeader';
-import './styles/ShoppingCart.css';
 import CheckoutModal from '../components/checkout/CheckoutModal';
+import Loading from '../components/Loading';
+import './styles/ShoppingCart.css';
 
 function ShoppingCart() {
   const [totalPrice, setTotalPrice] = useState(0);
@@ -16,6 +17,8 @@ function ShoppingCart() {
     setShowCheckoutModal,
     showCheckoutModal,
     setOrderId,
+    loading,
+    setLoading,
   } = useContext(TrooperContext);
 
   useEffect(() => {
@@ -29,6 +32,7 @@ function ShoppingCart() {
   }, [cart]);
 
   const handleClickCheckout = async () => {
+    setLoading(true);
     const recoverUser = localStorage.getItem('user');
     const recoverToken = localStorage.getItem('token');
     const parsedUser = JSON.parse(recoverUser);
@@ -62,6 +66,7 @@ function ShoppingCart() {
     });
 
     setOrderId(responseOrder.id);
+    setLoading(false);
     setShowCheckoutModal(true);
   };
 
@@ -99,7 +104,7 @@ function ShoppingCart() {
                 type="button"
                 onClick={handleClickCheckout}
               >
-                Checkout
+                {loading ? <Loading /> : 'Checkout'}
               </button>
               <div className="checkout-disclaimer">
                 <span className="material-icons-outlined">
