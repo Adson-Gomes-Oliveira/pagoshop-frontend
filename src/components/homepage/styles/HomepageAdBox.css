@@ -43,3 +43,11 @@
   border: 0.1rem solid white;
   color: white;
 }
+
+/* Media Queries */
+
+@media screen and (min-width: 1920px) {
+  .homepage-ad-box {
+    padding: 12rem 2rem 12rem 2rem;
+  }
+}
