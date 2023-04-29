@@ -217,4 +217,22 @@
     color: white;
     font-size: 1.6rem;
   }
+
+  .main-header .profile-details {
+    display: flex;
+    flex-direction: column;
+    width: 10%;
+    background-color: black;
+    position: absolute;
+    top: 9.5%;
+    right: 3%;
+    animation: fadeIn 0.3s ease;
+  }
+  
+  .main-header .profile-details button {
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
+    padding: 0.5rem 0 0.5rem 0;
+  }
 }

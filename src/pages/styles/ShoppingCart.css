@@ -1,8 +1,6 @@
 .shopping-cart-section {
   display: flex;
   flex-direction: column;
-  background: rgb(120,0,0);
-  background: linear-gradient(220deg, rgba(120,0,0,1) 0%, rgba(36,2,2,1) 40%, rgba(0,0,0,1) 100%);
   padding-bottom: 4rem;
 }
 
@@ -92,8 +90,14 @@
   align-self: center;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   width: 38%;
   color: white;
   margin-top: 1rem;
+}
+
+@media screen and (min-width: 1920px) {
+  .shopping-cart-section {
+    padding-bottom: 15rem;
+  }
 }

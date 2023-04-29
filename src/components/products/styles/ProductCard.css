@@ -10,7 +10,7 @@
 }
 
 .product-card .card-thumbnail {
-  height: 18rem;
+  min-height: 18rem;
   background-color: rgba(151, 151, 151, 0.5);
   background-blend-mode: darken;
   background-size: 120%;
@@ -20,7 +20,7 @@
 }
 
 .product-card:hover .card-thumbnail {
-  background-size: 150%;
+  background-size: 140%;
 }
 
 .product-card .card-info {
@@ -53,4 +53,12 @@
 
 .product-card:hover button {
   color: rgb(202, 202, 202);
+}
+
+/* Media Queries */
+
+@media screen and (min-width: 1920px) {
+  .product-card .card-thumbnail {
+    min-height: 22rem;
+  }
 }

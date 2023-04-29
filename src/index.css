@@ -12,6 +12,11 @@
   --amaranth-theme-base: #b70b28;
 }
 
+body {
+  background: rgb(120,0,0);
+  background: linear-gradient(220deg, rgba(120,0,0,1) 0%, rgba(36,2,2,1) 40%, rgba(0,0,0,1) 100%);
+}
+
 a {
   text-decoration: none;
 }
