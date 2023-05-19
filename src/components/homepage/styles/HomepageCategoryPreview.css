@@ -49,7 +49,7 @@
 
 .homepage-category-preview .category-showed .image-div {
   min-width: 80%;
-  min-height: 25rem;
+  min-height: 20rem;
   background-size: 150%;
   background-position: center;
   -webkit-transition:all 0.5s ease;
