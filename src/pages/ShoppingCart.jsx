@@ -23,7 +23,7 @@ function ShoppingCart() {
 
   useEffect(() => {
     // eslint-disable-next-line no-alert
-    alert('O Serviço de Banco de Dados responsável pela finalização da compra pode estar indisponível !')
+    alert('O Serviço de Banco de Dados responsável pela finalização da compra pode estar indisponível !');
     const prices = cart.map((product) => {
       const finalPricePerProduct = product.price * product.quantity;
       return finalPricePerProduct;
