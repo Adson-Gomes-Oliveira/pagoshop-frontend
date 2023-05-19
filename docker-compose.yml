@@ -16,6 +16,7 @@ services:
       - REACT_APP_LOGOUT_BASEURL=api/auth/logout
       - REACT_APP_ORDER_BASEURL=api/orders
       - REACT_APP_PAYMENT_BASEURL=api/payments
+      - REACT_APP_ENVIROMENT=dev
       - JWT_SECRET=MTk4OGExOTZkMWYyOWZjZjlmOTcwMWVjZWRjMzc1MzZkOGM0MmFjMjQ0NjcyZjIzZDQwOGU4YTQ1YWQ3NTRjZA==
 
 networks: 

@@ -28,20 +28,22 @@ function TrooperProvider({ children }) {
   };
 
   const requestHealthChecks = async () => {
-    const responseGateway = await requester('health', 'gateway');
-    if (responseGateway === 'OK!') setLoadLevel('20%');
+    if (process.env.REACT_APP_ENVIRONMENT === 'prod') {
+      const responseGateway = await requester('health', 'gateway');
+      if (responseGateway === 'OK!') setLoadLevel('20%');
 
-    const responseAccount = await requester('health', 'account');
-    if (responseAccount === 'OK!') setLoadLevel('40%');
+      const responseAccount = await requester('health', 'account');
+      if (responseAccount === 'OK!') setLoadLevel('40%');
 
-    const responseProduct = await requester('health', 'product');
-    if (responseProduct === 'OK!') setLoadLevel('60%');
+      const responseProduct = await requester('health', 'product');
+      if (responseProduct === 'OK!') setLoadLevel('60%');
 
-    const responseOrder = await requester('health', 'order');
-    if (responseOrder === 'OK!') setLoadLevel('80%');
+      const responseOrder = await requester('health', 'order');
+      if (responseOrder === 'OK!') setLoadLevel('80%');
 
-    const responsePayment = await requester('health', 'payment');
-    if (responsePayment === 'OK!') setLoadLevel('100%');
+      const responsePayment = await requester('health', 'payment');
+      if (responsePayment === 'OK!') setLoadLevel('100%');
+    }
 
     setLoading(false);
   };
